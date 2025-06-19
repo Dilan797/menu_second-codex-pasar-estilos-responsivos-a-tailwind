@@ -40,19 +40,24 @@
                      >
                <!--Opciones del nav_menú -->
                <a href="#" class="nav__logo max-[620px]:hidden">VIVA LA VIDA</a>
-               <img src="/pictures/logo-1.png" alt="Logo" class="logo-mobile hidden max-[620px]:block w-[13vh] mt-[0vh] mx-auto">
+               <img src="/pictures/logo-1.png" alt="Logo" class="logo-mobile hidden max-[620px]:block w-[12vh] mt-[0vh] mx-auto">
                <!-- 2️⃣  PANEL LATERAL (ya tenía estas clases) -->
                <div id="nav-menu"
                   class="nav__menu
-                        fixed inset-y-0 left-0                      <!-- pegado al borde -->
-                        -translate-x-full                        <!-- ① estado CERRADO -->
-                        w-[80%] lg:w-[40%] max-w-[380px]
-                        px-6 py-24
-                        bg-white/80 backdrop-blur-md
-                        shadow-[0_8px_24px_rgba(0,0,0,.25)] ring-1 ring-white/30
+                        fixed inset-y-0 left-[-41%]
+                        h-[calc(70dvh-3rem)]  
+                        lg:h-[calc(93vh-6rem)]
+                        -translate-x-full bottom-0
+                        w-[80%] lg:w-[40%] max-w-[380px] 
+                        px-12 py-56 top-32 md:top-20                  /* header mediano */
+                        lg:top-[54px]  lg:px-12 lg:py-20  
+                        bg-yellow-50/95 backdrop-blur-lg
+                        shadow-[0_12px_32px_rgba(0,0,0,.15)] ring-1 ring-yellow-200/50
                         rounded-l-3xl flex flex-col gap-8
                         transition-transform duration-300 z-40">
-                  <ul class="nav__list space-y-8 text-lg font-medium tracking-wide">
+                  <ul class="nav__list space-y-[-5%] text-lg font-medium tracking-wide
+                        gap-8                 <!-- espaciado normal entre links -->
+                        mt-8   ">
                      <li><a href="#home"         class="nav__link">Inicio</a></li>
                      <li><a href="#recipe"       class="nav__link">Menú</a></li>
                      <li><a href="#experiencias" class="nav__link">Experiencias</a></li>
@@ -66,15 +71,15 @@
             <!-- Toggle Buttom -->
             <button id="nav-toggle"
                         aria-label="Abrir menú"
-                        class="nav__toggle
-                              fixed bottom-6 left-4                <!-- 👈 ahora a la izquierda -->
-                              md:left-8                             <!-- un poco más separada en desktop -->
+                        class="nav__toggle has-glow-ring 
+                              fixed top-[50vh] left-1                <!-- 👈 ahora a la izquierda -->
+                              md:left-1.5 md:top-[85%]                             <!-- un poco más separada en desktop -->
                               flex items-center justify-center
                               w-12 h-12 md:w-14 md:h-14
                               bg-[hsl(45,99%,55%)] text-[var(--title-color)]
                               rounded-full shadow-lg
                               ring-2 ring-white/40 ring-offset-2 ring-offset-[hsl(45,99%,55%)]
-                              hover:scale-105 active:scale-95
+                              
                               transition-all duration-200 ease-out
                               z-[999]">
 
@@ -83,7 +88,7 @@
             </button>
             <!--==================== MAIN ====================-->
             <main class="main bg-[rgba(255,255,255,0.8)] 
-               w-[92%] max-w-[800px] mx-auto my-8 p-8 shadow-md rounded-2xl  
+               w-[92%] max-w-[800px] mx-auto mt-20 mb-8 p-8 shadow-md rounded-2xl  
                lg:w-[50vw] lg:ml-auto lg:max-w-none lg:px-12 lg:sticky lg:top-32 lg:mt-6 lg:rounded-l-2xl lg:m-0 lg:h-[92vh]">
                <!--==================== HOME ====================-->
                <section class="home section" id="home">
@@ -122,11 +127,11 @@
       <!-- SECTION ---------------------------------------------------------------->
       <section id="menu-showcase"
          class="relative w-full min-h-[160vh]
-                        flex flex-col lg:grid lg:grid-cols-2 lg:gap-8">
+                        flex flex-col lg:grid lg:grid-cols-2 lg:gap-6">
 
          <!-- TEXTO FIJO --------------------------------------------------------->
-            <div class="self-start px-6 py-12 lg:px-12 lg:sticky lg:top-24">
-               <h2 class="text-4xl lg:text-5xl font-serif text-[#143964] mb-6">
+            <div class="self-start px-6 py-16  lg:px-12 lg:py-12 lg:sticky lg:top-24">
+               <h2 class="text-4xl lg:text-5xl font-serif text-[#143964] mb-6 ">
                   La huerta, el mar <br>y las estaciones
                </h2>
                <p class="text-lg lg:text-xl leading-relaxed text-[#143964]/90">

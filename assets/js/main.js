@@ -6,8 +6,8 @@
     const links = panel.querySelectorAll('.nav__link');
 
     /* clases que controlan la posición */
-    const HIDDEN = '-translate-x-full';  // fuera de pantalla (izquierda)
-    const VISIBLE = 'translate-x-0';     // panel a la vista
+    const HIDDEN = '-translate-x-[100%]';  // Estado cerrado
+    const VISIBLE = 'translate-x-[50%]';  // Estado abierto    
 
     const open = () => {
         panel.classList.remove(HIDDEN);

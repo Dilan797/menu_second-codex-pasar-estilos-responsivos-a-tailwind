@@ -1,4 +1,36 @@
+/* === Anima un resplandor que late suavemente === */
+/* 1️⃣  Keyframes de resplandor suave */
+@keyframes ring-glow {
+    0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,.0),
+                            0 0 4px 2px hsla(45,99%,55%,.35); }
+    50%     { box-shadow: 0 0 6px 3px rgba(255,255,255,.8),
+                            0 0 12px 6px hsla(45,99%,55%,.55); }
+}
+
+/* 2️⃣  Mixin reusable para cualquier botón redondo */
+.has-glow-ring {
+    position: relative;               /* para anclar el ::after */
+    overflow: visible;                /* que sobresalga el aro */
+}
+
+.has-glow-ring::after {
+    content: '';
+    position: absolute;
+    inset: -3px;                      /* grosor del aro; ajusta a tu gusto */
+    border-radius: 9999px;            /* círculo perfecto */
+    border: 1.5px solid transparent;  /* define un borde nítido y fino */
+    animation: ring-glow 2.6s ease-in-out infinite;
+    pointer-events: none;             /* no bloquea clics */
+}
+
+
+/* Reutilizable en cualquier elemento redondo */
+.glow-border {
+    animation: glow-border 2.2s ease-in-out infinite;
+    border-radius: 9999px;   /* sigue siendo circular */
+}
 /* ========== 1. ENVOLTORIO GLOBAL ========== */
+
 .wrapper {
   width: min(90%, 1200px);   /* 90 % del viewport pero nunca >1200 px */
   margin-inline: auto;       /* centra horizontalmente */
@@ -66,12 +98,12 @@
 
 .nav__toggle {
     position: fixed;  /* Fija el botón para que no se mueva al hacer scroll */
-    right: 0;         /* Coloca el botón en el extremo derecho */
-    top:77%;
+    right: 1.5rem;         /* Coloca el botón en el extremo derecho */
+    top:18rem;
     transform: translateY(-50%);  /* Asegura que el botón esté perfectamente centrado */
     cursor: pointer;
     z-index: 999;     /* Asegura que el botón esté por encima de otros elementos */
-    background-color: hsl(45, 99%, 55%);
+    backgroundna-color: hsl(45, 99%, 55%);
     padding: 10px;
     border-radius: 50%;
     color: var(--title-color);
@@ -102,6 +134,7 @@
 .show-menu{
     right:0;
 }
+
 /* FONDO OPCAO CUADO ABRE NA_MENÚ */
 .overlay {
     position: fixed;
@@ -136,7 +169,7 @@
 
 .content-wrapper {
     position: relative;
-    min-height: 100vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
 }
