@@ -1,0 +1,204 @@
+/* ========== 1. ENVOLTORIO GLOBAL ========== */
+.wrapper {
+  width: min(90%, 1200px);   /* 90 % del viewport pero nunca >1200 px */
+  margin-inline: auto;       /* centra horizontalmente */
+  padding-inline: 1.5rem;    /* el mismo “gutter” en todo el sitio */
+}
+/*=============== HEADER & NAV ===============*/
+.header{
+    position: fixed;
+    width: 100%;
+    top:1%;
+    left:0;    
+    z-index: var(--z-fixed);
+    transition: box-shadow .4s transform 0.4s;
+}
+.nav{
+    top:12%;
+    position:relative;
+    height: var(--header--height);
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+/* Oculta el logo por defecto */
+.logo-mobile {
+    display: none;
+}
+
+
+
+.nav__text{
+    margin-left:.5rem;
+}
+
+.nav__toggle{
+    display flex;    
+}
+
+.nav__list{
+    text-align:center;
+    display:flex;
+    flex-direction:column   ;
+    row-gap: 2rem;
+}
+
+.nav__link{
+    position:relative;
+    color: var(--title-color);
+    font-family: var(--second-font); 
+}
+
+.nav__link::after{
+    content:'';    
+    width: 0;
+    height: 3px;
+    background-color: #333;
+    position:absolute;
+    left: 0;
+    bottom:-.5rem;
+    transition: width .3s ease-in-out;
+}
+.nav__link:hover::after{
+    width:100%;
+}
+
+.nav__toggle {
+    position: fixed;  /* Fija el botón para que no se mueva al hacer scroll */
+    right: 0;         /* Coloca el botón en el extremo derecho */
+    top:77%;
+    transform: translateY(-50%);  /* Asegura que el botón esté perfectamente centrado */
+    cursor: pointer;
+    z-index: 999;     /* Asegura que el botón esté por encima de otros elementos */
+    background-color: hsl(45, 99%, 55%);
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--title-color);
+    transition: transform 0.7s ease; /* Añade una transición suave para la rotación */
+
+}
+.nav__toggle .toggle-icon {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.nav__toggle.active .toggle-icon {
+    transform: rotate(315deg);
+}
+
+.nav__toggle i {
+    font-size: 1.5rem;
+}
+.nav__menu, .nav__toggle, .show-menu {
+    transition-property: right, transform;
+    transition-duration: .6s, .8s;
+    transition-timing-function: ease-in-out, ease;
+}
+.nav__menu {
+    transition: right .6s ease-in-out;
+}
+/* Show menu */
+.show-menu{
+    right:0;
+}
+/* FONDO OPCAO CUADO ABRE NA_MENÚ */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+    z-index: 90; /* Menor que el z-index del menú y el botón */
+    display: none; /* Oculto por defecto */
+}
+
+.overlay.active {
+    display: block;
+}
+/* VIDEO STYLES */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#myVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7; /* Ajusta este valor para cambiar la opacidad del video */
+}
+
+.content-wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Add shadow header */
+/* Menu de navegacion */
+.nav.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 248, 225, 0.95);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    margin: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav__logo {
+    color: #FF4500;
+    font-size: 1.8rem;
+    margin-left: initial;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+}
+/* Active link */
+
+
+/*=============== HOME ===============*/
+
+
+/*=============== BUTTON ===============*/
+
+
+/*=============== RECIPE ===============*/
+
+
+/*=============== POPULAR ===============*/
+
+
+/*=============== DELIVERY ===============*/
+
+
+/*=============== CONTACT ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up */
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
