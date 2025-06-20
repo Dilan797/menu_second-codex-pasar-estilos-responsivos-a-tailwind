@@ -1,38 +1,41 @@
     /*=============== SHOW MENU ===============*/  
     /* Menu show */
+/*=============== SHOW MENU ===============*/
 (() => {
-    const btn   = document.getElementById('nav-toggle');
+    const btn = document.getElementById('nav-toggle');
     const panel = document.getElementById('nav-menu');
     const links = panel.querySelectorAll('.nav__link');
 
-    /* clases que controlan la posición */
-    const HIDDEN = '-translate-x-[100%]';  // Estado cerrado
-    const VISIBLE = 'translate-x-[50%]';  // Estado abierto    
+    let isMenuOpen = false;
 
     const open = () => {
-        panel.classList.remove(HIDDEN);
-        panel.classList.add(VISIBLE);
+        panel.classList.add('menu-open');
         document.body.classList.add('overflow-hidden');
         btn.setAttribute('aria-expanded', 'true');
+        isMenuOpen = true;
     };
 
     const close = () => {
-        panel.classList.remove(VISIBLE);
-        panel.classList.add(HIDDEN);
+        panel.classList.remove('menu-open');
         document.body.classList.remove('overflow-hidden');
         btn.setAttribute('aria-expanded', 'false');
+        isMenuOpen = false;
     };
 
-    /* toggle con el botón */
-    btn.addEventListener('click', () =>
-        btn.getAttribute('aria-expanded') === 'true' ? close() : open()
-    );
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        isMenuOpen ? close() : open();
+    });
 
-    /* cerrar al seleccionar un enlace */
-    links.forEach(l => l.addEventListener('click', close));
+    links.forEach(link => {
+        link.addEventListener('click', close);
+    });
 
-    /* cerrar con la tecla ESC */
-    document.addEventListener('keydown', e => e.key === 'Escape' && close());
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMenuOpen) close();
+    });
+
+    btn.setAttribute('aria-expanded', 'false');
 })();
 /*=============== VIDEO SCROLL EFFECT ===============*/
 

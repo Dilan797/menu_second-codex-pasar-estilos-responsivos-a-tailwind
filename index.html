@@ -43,21 +43,31 @@
                <img src="/pictures/logo-1.png" alt="Logo" class="logo-mobile hidden max-[620px]:block w-[12vh] mt-[0vh] mx-auto">
                <!-- 2️⃣  PANEL LATERAL (ya tenía estas clases) -->
                <div id="nav-menu"
-                  class="nav__menu
-                        fixed inset-y-0 left-[-41%]
-                        h-[calc(70dvh-3rem)]  
-                        lg:h-[calc(93vh-6rem)]
-                        -translate-x-full bottom-0
-                        w-[80%] lg:w-[40%] max-w-[380px] 
-                        px-12 py-56 top-32 md:top-20                  /* header mediano */
-                        lg:top-[54px]  lg:px-12 lg:py-20  
-                        bg-yellow-50/95 backdrop-blur-lg
-                        shadow-[0_12px_32px_rgba(0,0,0,.15)] ring-1 ring-yellow-200/50
-                        rounded-l-3xl flex flex-col gap-8
-                        transition-transform duration-300 z-40">
-                  <ul class="nav__list space-y-[-5%] text-lg font-medium tracking-wide
-                        gap-8                 <!-- espaciado normal entre links -->
-                        mt-8   ">
+                  class="nav__menu fixed left-[-15.7vw]  
+                        /* Altura reducida móvil y desktop */
+                        top-[19vh] h-[80vh] 
+                        lg:top-[8vh] lg:h-[78vh]
+                        
+                        /* Ancho responsive mejorado */
+                        w-[85%] sm:w-[75%] lg:w-[45%] xl:w-[40%] 
+                        max-w-[320px] lg:max-w-[390px]   
+                        
+                        /* Padding optimizado */
+                        px-8 py-8 lg:px-10 lg:py-10
+                        
+                        /* Fondo y efectos mejorados */
+                        bg-yellow-50/96 backdrop-blur-xl
+                        shadow-[0_20px_40px_rgba(0,0,0,0.12)] 
+                        ring-1 ring-yellow-200/60
+                        
+                        /* Layout y animación */
+                        flex flex-col items-center justify-center
+                        transition-all duration-500 ease-out
+                        z-40 overflow-hidden">
+                  <ul class="nav__list space-y-2 lg:space-y-4 
+                        lg:text-lg font-medium tracking-wide
+                                    <!-- espaciado normal entre links -->
+                        ">
                      <li><a href="#home"         class="nav__link">Inicio</a></li>
                      <li><a href="#recipe"       class="nav__link">Menú</a></li>
                      <li><a href="#experiencias" class="nav__link">Experiencias</a></li>
@@ -73,7 +83,7 @@
                         aria-label="Abrir menú"
                         class="nav__toggle has-glow-ring 
                               fixed top-[50vh] left-1                <!-- 👈 ahora a la izquierda -->
-                              md:left-1.5 md:top-[85%]                             <!-- un poco más separada en desktop -->
+                              md:left-1.5 md:top-[50%]                             <!-- un poco más separada en desktop -->
                               flex items-center justify-center
                               w-12 h-12 md:w-14 md:h-14
                               bg-[hsl(45,99%,55%)] text-[var(--title-color)]

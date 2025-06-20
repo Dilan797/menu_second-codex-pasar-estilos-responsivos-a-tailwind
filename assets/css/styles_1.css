@@ -197,12 +197,55 @@
 /* Active link */
 
 
-/*=============== HOME ===============*/
+/*=============== SIDEBAR ===============*/
+/* Sidebar CSS */
+#nav-menu {
+    transform: translateX(-100%);
+}
 
+#nav-menu.menu-open {
+    transform: translateX(0);
+}
+@media (max-width: 1023px) {
+    
+    #nav-menu {
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        height: 70vh;
+        margin-top: -2.3rem;
+        left: -4.2rem;
+    }
 
-/*=============== BUTTON ===============*/
+}
 
+@media (min-width: 1024px) {
+    #nav-menu {
+        border-top-right-radius: 2.5rem;
+        border-bottom-right-radius: 2.5rem;
+        eight: 80vh;
+    }
+    
+}
+@media (min-width: 1500px) {
+    #nav-menu{
+        left:-33%;
+        width: 350px !important;
+        max-width: 380px !important;
+    }
+}
+/*=============== MAIN ===============*/
+/* Exactamente de 768px a 1024px */
+/* CSS para el rango específico 768px-1024px */
+@media (min-width: 768px){
+    .main {
+        height: 80%;
+        max-width: 850px;
+        padding: 2.5rem;
+        margin-top: 6rem;
+        margin-bottom: 2.5rem;
+    }    
 
+}
 /*=============== RECIPE ===============*/
 
 
