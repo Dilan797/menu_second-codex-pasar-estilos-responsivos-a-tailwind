@@ -33,15 +33,22 @@
                         h-14 sm:h-16 md:h-20
                         px-4 sm:px-6 md:px-8
 
-                        flex items-center justify-between
+                        flex items-center justify-center md:justify-between
                         rounded-2xl transition-colors duration-300
                      "
                      >
                <a href="#" class="nav__logo max-[620px]:hidden">CAROLINA SALAS</a>
                <img src="pictures/logo-1.png" alt="Logo" class="logo-mobile hidden max-[620px]:block w-[12vh] mt-[0vh] mx-auto">
 
-               <!-- Links de tratamientos (visibles cuando navbar tiene fondo) -->
-               <ul class="nav-links">
+               <!-- Botón menú animado (solo móvil) -->
+               <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+                  <span class="nav-toggle__bar"></span>
+                  <span class="nav-toggle__bar"></span>
+                  <span class="nav-toggle__bar"></span>
+               </button>
+
+               <!-- Links de tratamientos -->
+               <ul class="nav-links" id="nav-links">
                   <li><a href="#servicios" class="nav-links__item">Terapias</a></li>
                   <li><a href="#menu-showcase" class="nav-links__item">Hipopresivos</a></li>
                   <li><a href="#testimonios" class="nav-links__item">Testimonios</a></li>

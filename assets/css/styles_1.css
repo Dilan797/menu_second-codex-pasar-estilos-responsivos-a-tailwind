@@ -135,6 +135,29 @@
         margin: 0 0.15rem;
     }
 }
+/* Landscape móvil: social bar más compacta */
+@media (max-width: 900px) and (orientation: landscape) {
+    .social-bar {
+        left: 50%;
+        top: auto;
+        bottom: 0.5rem;
+        transform: translateX(-50%);
+        flex-direction: row;
+        padding: 0.35rem 0.6rem;
+        border-radius: 2rem;
+    }
+    .social-bar__link {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+    .social-bar__divider {
+        width: 1px;
+        height: 20px;
+        margin: 0 0.1rem;
+    }
+}
+
 /* VIDEO STYLES */
 .video-container {
     position: fixed;
@@ -181,9 +204,72 @@
     flex-shrink: 0;
 }
 
-/*=============== NAV LINKS (aparecen con fondo sólido) ===============*/
-.nav-links {
+/*=============== NAV TOGGLE (botón animado móvil) ===============*/
+.nav-toggle {
     display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    border-radius: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: background 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+/* Solo visible cuando navbar tiene fondo sólido */
+.nav--solid .nav-toggle {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.nav-toggle:hover {
+    background: rgba(107, 76, 90, 0.08);
+}
+
+/* Las 3 barras animadas */
+.nav-toggle__bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #6B4C5A;
+    border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.18, 1),
+                opacity 0.3s ease,
+                width 0.3s ease;
+    transform-origin: center;
+}
+
+/* Barra central más corta — detalle visual */
+.nav-toggle__bar:nth-child(2) {
+    width: 14px;
+    margin-left: auto;
+}
+
+/* Estado abierto → X elegante */
+.nav-toggle.is-active .nav-toggle__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.is-active .nav-toggle__bar:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+.nav-toggle.is-active .nav-toggle__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/*=============== NAV LINKS ===============*/
+.nav-links {
+    display: flex;
     list-style: none;
     gap: 0.25rem;
     margin: 0;
@@ -192,19 +278,7 @@
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* Solo en desktop se muestran */
-@media (min-width: 768px) {
-    .nav-links {
-        display: flex;
-    }
-}
-
-/* Cuando el navbar tiene fondo sólido → links visibles */
-.nav--solid .nav-links {
-    opacity: 1;
-    transform: translateY(0);
+    pointer-events: none;
 }
 
 .nav-links__item {
@@ -230,6 +304,87 @@
     -webkit-backdrop-filter: blur(14px);
 }
 
+/* Desktop (768px+): links en línea, aparecen con fondo sólido */
+@media (min-width: 768px) {
+    .nav--solid .nav-links {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+}
+
+/* ---- Móvil (<768px): menú desplegable ---- */
+@media (max-width: 767px) {
+    /* Botón en esquina derecha, posición absoluta */
+    .nav-toggle {
+        display: flex;
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: scale(0.8) translateY(-50%);
+    }
+    .nav--solid .nav-toggle {
+        transform: scale(1) translateY(-50%);
+    }
+
+    /* Links SIEMPRE ocultos por defecto en móvil */
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 50%;
+        transform: translateX(-50%) translateY(-12px);
+        flex-direction: column;
+        width: calc(100% - 1rem);
+        background: rgba(250, 240, 245, 0.98);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-radius: 1.25rem;
+        padding: 0.75rem 0.5rem;
+        box-shadow: 0 12px 40px rgba(74, 46, 61, 0.12),
+                    0 2px 8px rgba(107, 76, 90, 0.08);
+        border: 1px solid rgba(107, 76, 90, 0.08);
+        gap: 0.2rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* SOLO visible al hacer clic en hamburguesa + navbar sólido */
+    .nav--solid .nav-links.is-open {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links__item {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+    .nav-links__item:hover {
+        background: rgba(107, 76, 90, 0.07);
+    }
+    .nav-links__item:active {
+        background: rgba(107, 76, 90, 0.14);
+        transform: scale(0.98);
+    }
+
+    /* Separador sutil entre items */
+    .nav-links li + li .nav-links__item {
+        border-top: 1px solid rgba(107, 76, 90, 0.06);
+    }
+}
+
 /* Active link */
 
 
@@ -240,22 +395,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem;
-    padding-top: 4rem;
+    padding: 0.75rem;
+    padding-top: 5.5rem;
+    padding-bottom: 1.5rem;
     background-color: hsl(340, 30%, 93%);
 }
 
 .hero-carolina__img {
     display: block;
-    max-width: calc(100% - 1rem);
-    max-height: calc(100vh - 2rem);
-    max-height: calc(100dvh - 2rem);
+    max-width: calc(100% - 1.5rem);
+    max-height: calc(100vh - 7rem);
+    max-height: calc(100dvh - 7rem);
     width: auto;
     height: auto;
     object-fit: contain;
     border: 1.5px solid rgba(107, 76, 90, 0.25);
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(107, 76, 90, 0.12);
+}
+
+/* Landscape en móvil — imagen más compacta */
+@media (max-width: 1023px) and (orientation: landscape) {
+    .hero-carolina {
+        padding-top: 4.5rem;
+        padding-bottom: 1rem;
+    }
+    .hero-carolina__img {
+        max-height: calc(100vh - 5.5rem);
+        max-height: calc(100dvh - 5.5rem);
+        max-width: 60%;
+    }
 }
 
 /* Ocultar en desktop */
@@ -283,6 +452,23 @@
         margin-bottom: 2.5rem;
     }
 }
+/*=============== LANDSCAPE MÓVIL — optimización general ===============*/
+@media (max-width: 1023px) and (orientation: landscape) {
+    #servicios,
+    #testimonios {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    .servicios-header,
+    .testimonios-header {
+        margin-bottom: 2rem;
+    }
+    /* Showcase no ocupe toda la pantalla */
+    #menu-showcase {
+        min-height: auto !important;
+    }
+}
+
 /*=============== RECIPE ===============*/
 
 
