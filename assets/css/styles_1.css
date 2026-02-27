@@ -455,59 +455,14 @@
     box-shadow: 0 4px 24px rgba(107, 76, 90, 0.12);
 }
 
-/* Landscape en móvil — imagen más compacta */
-@media (max-width: 1023px) and (orientation: landscape) {
-    .hero-carolina {
-        padding-top: 3.5rem;
-        padding-bottom: 0.75rem;
-        padding-left: max(0.75rem, env(safe-area-inset-left));
-        padding-right: max(0.75rem, env(safe-area-inset-right));
-    }
-    .hero-carolina__img {
-        max-height: calc(100vh - 4.5rem);
-        max-height: calc(100dvh - 4.5rem);
-        max-width: 55%;
-        border-radius: 10px;
-    }
-}
-/* Landscape celulares muy cortos (< 400px alto, tipo 20:9) */
-@media (orientation: landscape) and (max-height: 420px) {
-    .hero-carolina {
-        padding-top: 3rem;
-        padding-bottom: 0.5rem;
-    }
-    .hero-carolina__img {
-        max-height: calc(100vh - 3.5rem);
-        max-height: calc(100dvh - 3.5rem);
-        max-width: 45%;
-    }
-}
-
-/* Ocultar en desktop */
-@media (min-width: 1024px) {
+/* Ocultar hero en desktop y landscape */
+@media (min-width: 1024px), (orientation: landscape) {
     .hero-carolina {
         display: none;
     }
 }
 
 /*=============== MAIN ===============*/
-/* Ocultar en móvil/tablet — el panel solo se usa en desktop */
-@media (max-width: 1023px) {
-    .main {
-        display: none;
-    }
-}
-
-/* Desktop: panel lateral */
-@media (min-width: 1024px) {
-    .main {
-        height: 80%;
-        max-width: 850px;
-        padding: 2.5rem;
-        margin-top: 6rem;
-        margin-bottom: 2.5rem;
-    }
-}
 /*=============== LANDSCAPE MÓVIL — optimización general ===============*/
 @media (max-width: 1023px) and (orientation: landscape) {
     #servicios,
