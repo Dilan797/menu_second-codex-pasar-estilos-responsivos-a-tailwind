@@ -1,3 +1,143 @@
+/*=============== CÍRCULOS ESTÁTICOS — 1 imagen por círculo ===============*/
+.circle-static {
+    border-radius: 9999px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(74, 46, 61, 0.2);
+}
+
+.circle-static img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/*=============== INICIO DESKTOP — texto izq + imagen der ===============*/
+.inicio-desktop {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .inicio-desktop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        min-height: calc(100vh - 4rem);
+        min-height: calc(100dvh - 4rem);
+        padding: 5rem 2rem 3rem 4.5rem;
+    }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) {
+    .inicio-desktop {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        min-height: calc(100vh - 2rem);
+        min-height: calc(100dvh - 2rem);
+        padding: 4rem 1.5rem 2rem 4.5rem;
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+    }
+}
+
+/* Texto — lado izquierdo */
+.inicio-desktop__texto {
+    flex: 0 0 320px;
+}
+
+.inicio-desktop__kicker {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(107, 76, 90, 0.45);
+    margin-bottom: 0.6rem;
+}
+
+.inicio-desktop__title {
+    font-family: serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    color: #6B4C5A;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+.inicio-desktop__desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(107, 76, 90, 0.6);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.2px;
+}
+
+.inicio-desktop__desc:last-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.inicio-desktop__cta {
+    display: inline-block;
+    padding: 0.65rem 1.8rem;
+    background: #6B4C5A;
+    color: #fff;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.inicio-desktop__cta:hover {
+    background: #4A2E3D;
+    transform: translateY(-2px);
+}
+
+/* Imagen — se muestra completa, pegada al texto */
+.inicio-desktop__img {
+    flex: 0 1 auto;
+}
+
+.inicio-desktop__img img {
+    display: block;
+    height: calc(100vh - 8rem);
+    height: calc(100dvh - 8rem);
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 40px rgba(74, 46, 61, 0.15);
+}
+
+/* Landscape móvil: más compacto */
+@media (max-width: 1023px) and (orientation: landscape) {
+    .inicio-desktop__texto {
+        flex: 0 1 320px;
+    }
+    .inicio-desktop__img {
+        max-width: 400px;
+    }
+    .inicio-desktop__title {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+    }
+    .inicio-desktop__kicker {
+        font-size: 0.6rem;
+        margin-bottom: 0.4rem;
+    }
+    .inicio-desktop__desc {
+        font-size: 0.78rem;
+        margin-bottom: 0.5rem;
+    }
+    .inicio-desktop__desc:last-of-type {
+        margin-bottom: 1rem;
+    }
+}
+
 /* === Anima un resplandor que late suavemente === */
 /* 1️⃣  Keyframes de resplandor suave */
 @keyframes ring-glow {
@@ -444,12 +584,12 @@
 
 .hero-carolina__img {
     display: block;
+    width: 100%;
     max-width: calc(100% - 1.5rem);
     max-height: calc(100vh - 7rem);
     max-height: calc(100dvh - 7rem);
-    width: auto;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     border: 1.5px solid rgba(107, 76, 90, 0.25);
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(107, 76, 90, 0.12);
@@ -462,52 +602,8 @@
     }
 }
 
-/*=============== PANEL INICIO ===============*/
-.main-panel {
-    display: none;
-}
+/*=============== PANEL INICIO (legacy — eliminado) ===============*/
 
-/* Desktop: panel blanco mitad derecha */
-@media (min-width: 1024px) {
-    .main-panel {
-        display: block;
-        background: rgba(255, 255, 255, 0.8);
-        width: 50vw;
-        margin-left: auto;
-        max-width: none;
-        padding: 2.5rem 3rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        border-radius: 2rem 0 0 2rem;
-        box-shadow: -4px 0 24px rgba(107, 76, 90, 0.08);
-        position: sticky;
-        top: 2rem;
-        height: calc(100vh - 4rem);
-        height: calc(100dvh - 4rem);
-        overflow-y: auto;
-    }
-}
-
-/* Landscape móvil: mismo panel proporcionado */
-@media (max-width: 1023px) and (orientation: landscape) {
-    .main-panel {
-        display: block;
-        background: rgba(255, 255, 255, 0.8);
-        width: 50vw;
-        margin-left: auto;
-        padding: 1.5rem 2rem;
-        padding-right: max(2rem, env(safe-area-inset-right));
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        border-radius: 1.5rem 0 0 1.5rem;
-        box-shadow: -4px 0 24px rgba(107, 76, 90, 0.08);
-        position: sticky;
-        top: 1rem;
-        height: calc(100vh - 2rem);
-        height: calc(100dvh - 2rem);
-        overflow-y: auto;
-    }
-}
 /*=============== LANDSCAPE MÓVIL — optimización general ===============*/
 @media (max-width: 1023px) and (orientation: landscape) {
     #servicios,

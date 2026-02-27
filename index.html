@@ -11,8 +11,8 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css?v=7">
-      <link rel="stylesheet" href="assets/css/styles_1.css?v=7">
+      <link rel="stylesheet" href="assets/css/styles.css?v=14">
+      <link rel="stylesheet" href="assets/css/styles_1.css?v=14">
       <script src="https://cdn.tailwindcss.com"></script>
 
       <title>Carolina Salas — Terapias de Hipopresivos</title>
@@ -73,14 +73,30 @@
                   <i class="ri-whatsapp-line"></i>
                </a>
             </aside>
-            <!--==================== HERO CAROLINA ==================== -->
+            <!--==================== HERO CAROLINA (solo móvil portrait) ==================== -->
             <section class="hero-carolina" id="home">
-               <img src="assets/img/carolina-salas.jpg" alt="Carolina Salas — Psicóloga, especialista en obesidad y trastornos alimentarios, técnicas manuales no invasivas" class="hero-carolina__img">
+               <img src="assets/img/carolina-salas.jpg" alt="Carolina Salas — Especialista en hipopresivos" class="hero-carolina__img">
             </section>
 
-            <!--==================== PANEL INICIO (desktop + landscape) ====================-->
-            <main class="main-panel">
-            </main>
+            <!--==================== INICIO DESKTOP — texto izq + imagen der ====================-->
+            <section class="inicio-desktop" id="home-desktop">
+               <div class="inicio-desktop__texto">
+                  <p class="inicio-desktop__kicker">Terapias de Hipopresivos</p>
+                  <h1 class="inicio-desktop__title">Tu bienestar comienza desde adentro</h1>
+                  <p class="inicio-desktop__desc">
+                     Técnicas posturales y respiratorias que fortalecen tu core profundo,
+                     rehabilitan el suelo pélvico y transforman tu cuerpo de forma segura y natural.
+                  </p>
+                  <p class="inicio-desktop__desc">
+                     Sesiones personalizadas, recuperación postparto y programas grupales
+                     adaptados a cada etapa de tu vida.
+                  </p>
+                  <a href="#servicios" class="inicio-desktop__cta">Descubre nuestras terapias</a>
+               </div>
+               <div class="inicio-desktop__img">
+                  <img src="assets/img/carolina-salas.jpg" alt="Carolina Salas — Especialista en hipopresivos">
+               </div>
+            </section>
 
          </div>
       </div>
@@ -105,37 +121,22 @@
                </p>
             </div>
 
-         <!-- COLUMNA DERECHA : 3 círculos --------------------------------------->
+         <!-- COLUMNA DERECHA : 3 círculos estáticos --------------------------->
             <div class="relative flex flex-col items-center gap-8 sm:gap-14 py-16 lg:py-24">
 
                <!-- CÍRCULO 1 -->
-               <div class="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]
-                           rounded-full overflow-hidden bg-[#4A2E3D]/80">
-                  <div class="img-track space-y-6 p-6">
-                     <img src="assets/img/sesiones/sesion-1.jpg" class="w-full rounded-xl shadow-lg" alt="Sesión de hipopresivos">
-                     <img src="assets/img/sesiones/sesion-2.jpg" class="w-full rounded-xl shadow-lg" alt="Postura hipopresiva">
-                     <img src="assets/img/sesiones/sesion-3.jpg" class="w-full rounded-xl shadow-lg" alt="Técnica de respiración">
-                  </div>
+               <div class="circle-static w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]">
+                  <img src="imagenes-terapia/01-respiracion-hipopresiva-de-pie.jpg" alt="Respiración hipopresiva de pie">
                </div>
 
                <!-- CÍRCULO 2 -->
-               <div class="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]
-                           rounded-full overflow-hidden bg-[#4A2E3D]/80">
-                  <div class="img-track space-y-6 p-6">
-                     <img src="assets/img/sesiones/sesion-4.jpg" class="w-full rounded-xl shadow-lg" alt="Terapia grupal">
-                     <img src="assets/img/sesiones/sesion-5.jpg" class="w-full rounded-xl shadow-lg" alt="Ejercicio de core">
-                     <img src="assets/img/sesiones/sesion-6.jpg" class="w-full rounded-xl shadow-lg" alt="Recuperación postparto">
-                  </div>
+               <div class="circle-static w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]">
+                  <img src="imagenes-terapia/04-clase-grupal-hipopresivos.jpg" alt="Clase grupal de hipopresivos">
                </div>
 
                <!-- CÍRCULO 3 -->
-               <div class="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]
-                           rounded-full overflow-hidden bg-[#4A2E3D]/80">
-                  <div class="img-track space-y-6 p-6">
-                     <img src="assets/img/sesiones/sesion-7.jpg" class="w-full rounded-xl shadow-lg" alt="Suelo pélvico">
-                     <img src="assets/img/sesiones/sesion-8.jpg" class="w-full rounded-xl shadow-lg" alt="Pilates e hipopresivos">
-                     <img src="assets/img/sesiones/sesion-9.jpg" class="w-full rounded-xl shadow-lg" alt="Bienestar integral">
-                  </div>
+               <div class="circle-static w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]">
+                  <img src="imagenes-terapia/05-tecnica-vacio-abdominal.jpg" alt="Técnica de vacío abdominal">
                </div>
 
             </div>
@@ -386,9 +387,9 @@
       </div>
 
       <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js?v=7"></script>
-      <script src="assets/js/zoom-scroll.js?v=7"></script>
-      <script src="assets/js/nav-bar.js?v=7"></script>
-      <script src="assets/js/scroll.js?v=7"></script>
+      <script src="assets/js/main.js?v=14"></script>
+      <script src="assets/js/zoom-scroll.js?v=14"></script>
+      <script src="assets/js/nav-bar.js?v=14"></script>
+      <script src="assets/js/scroll.js?v=14"></script>
    </body>
 </html>
