@@ -8,8 +8,20 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# HTML: nunca cachear para que siempre sirva la última versión
 [[headers]]
-  for = "/assets/*"
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+# Imágenes: caché largo (no cambian)
+[[headers]]
+  for = "/assets/img/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
@@ -22,6 +34,17 @@
   for = "/pictures/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# CSS y JS: caché corto (cambian con cada deploy)
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[redirects]]
   from = "/*"

@@ -4,7 +4,7 @@
     /*=============== ADD SHADOW HEADER ===============*/
 
 
-    /*=============== SHOW SCROLL UP ===============*/ 
+    /*=============== SHOW SCROLL UP ===============*/
 
 
     /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
@@ -50,6 +50,10 @@
     /* --- IntersectionObserver para animar entrada --- */
     const cards = document.querySelectorAll('.servicio-card');
     if (cards.length) {
+        /* Paso 1: marcar tarjetas para animación (solo si JS funciona) */
+        cards.forEach(card => card.classList.add('will-animate'));
+
+        /* Paso 2: observer para revelar al hacer scroll */
         let revealedCount = 0;
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -61,18 +65,18 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
+        }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
 
         cards.forEach(card => observer.observe(card));
 
-        /* Fallback: si tras 2.5s alguna tarjeta sigue oculta, forzar visibilidad */
+        /* Paso 3: seguro — si en 3s alguna sigue oculta, mostrarla */
         setTimeout(() => {
             cards.forEach(card => {
                 if (!card.classList.contains('is-visible')) {
-                    card.classList.add('no-js-fallback');
+                    card.classList.add('is-visible');
                 }
             });
-        }, 2500);
+        }, 3000);
     }
 
     /* --- Modal --- */
@@ -124,7 +128,9 @@
     const dotsContainer = document.querySelector('.testimonios-dots');
     if (!slider || !testimonioCards.length || !dotsContainer) return;
 
-    /* --- IntersectionObserver para fade-in --- */
+    /* --- Marcar para animación + IntersectionObserver para fade-in --- */
+    testimonioCards.forEach(c => c.classList.add('will-animate'));
+
     let tRevealedCount = 0;
     const obsT = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -134,17 +140,17 @@
                 obsT.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
     testimonioCards.forEach(c => obsT.observe(c));
 
-    /* Fallback: forzar visibilidad si el observer no dispara */
+    /* Seguro: mostrar todo tras 3s */
     setTimeout(() => {
         testimonioCards.forEach(c => {
             if (!c.classList.contains('is-visible')) {
-                c.classList.add('no-js-fallback');
+                c.classList.add('is-visible');
             }
         });
-    }, 2500);
+    }, 3000);
 
     /* --- Calcular cuántas tarjetas se ven a la vez --- */
     const getVisible = () => {

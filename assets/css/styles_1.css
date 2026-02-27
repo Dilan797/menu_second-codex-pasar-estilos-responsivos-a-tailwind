@@ -715,6 +715,7 @@
 
 /* Tarjetas con proporciones variadas — estilo Pinterest */
 .gallery-card {
+    position: relative;
     width: 100%;
     min-height: 0;
     border-radius: 16px;
@@ -727,6 +728,9 @@
 .gallery-card--short  { flex: 1; }
 
 .gallery-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -787,34 +791,36 @@
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     cursor: pointer;
     transition: transform 0.35s ease, box-shadow 0.35s ease;
-    opacity: 0;
-    transform: translateY(30px);
-}
-.servicio-card.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s ease;
 }
 .servicio-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
-.servicio-card.is-visible:hover {
+
+/* Animación: solo si JS cargó y añadió .will-animate */
+.servicio-card.will-animate {
+    opacity: 0;
+    transform: translateY(30px);
+}
+.servicio-card.will-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.35s ease;
+}
+.servicio-card.will-animate.is-visible:hover {
     transform: translateY(-6px);
 }
 
-/* Fallback: si el observer no dispara en 2s, las tarjetas se muestran */
-.servicio-card.no-js-fallback {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .servicio-card__img {
+    position: relative;
     aspect-ratio: 4 / 3;
     overflow: hidden;
     background: #8B7080;
 }
 .servicio-card__img img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -978,17 +984,15 @@
     border-radius: 20px;
     padding: 2.5rem 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Animación: solo si JS cargó y añadió .will-animate */
+.testimonio-card.will-animate {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.testimonio-card.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Fallback testimonios */
-.testimonio-card.no-js-fallback {
+.testimonio-card.will-animate.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -1080,44 +1084,3 @@
     }
 }
 
-/*=============== MOBILE FIX — forzar visibilidad de TODAS las imágenes ===============*/
-@media (max-width: 768px) {
-    /* === SERVICIOS: quitar animación opacity en móvil === */
-    .servicio-card {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-
-    /* === TESTIMONIOS: quitar animación opacity en móvil === */
-    .testimonio-card {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-
-    /* === GALERÍA: forzar dimensiones y visibilidad de imágenes === */
-    .gallery-card {
-        position: relative;
-        overflow: hidden;
-    }
-    .gallery-card img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        display: block !important;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    /* === SERVICIOS IMG: forzar que la imagen llene el contenedor === */
-    .servicio-card__img {
-        position: relative;
-        min-height: 180px;
-    }
-    .servicio-card__img img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        display: block !important;
-    }
-}
