@@ -24,11 +24,6 @@
 }
 
 
-/* Reutilizable en cualquier elemento redondo */
-.glow-border {
-    animation: glow-border 2.2s ease-in-out infinite;
-    border-radius: 9999px;   /* sigue siendo circular */
-}
 /* ========== 1. ENVOLTORIO GLOBAL ========== */
 
 .wrapper {
@@ -304,30 +299,45 @@
     -webkit-backdrop-filter: blur(14px);
 }
 
-/* Desktop (768px+): links en línea, aparecen con fondo sólido */
-@media (min-width: 768px) {
+/* Desktop (768px+) y landscape: links en línea, aparecen con fondo sólido */
+@media (min-width: 768px), (orientation: landscape) {
     .nav--solid .nav-links {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
     }
+    /* Hamburguesa oculta en estos modos */
+    .nav-toggle {
+        display: none !important;
+    }
 }
 
-/* ---- Móvil (<768px): menú desplegable ---- */
-@media (max-width: 767px) {
+/* Landscape: font más pequeño para que quepan los links */
+@media (orientation: landscape) and (max-width: 900px) {
+    .nav-links__item {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+/* ---- Móvil portrait: menú desplegable ---- */
+@media (max-width: 767px) and (orientation: portrait) {
     /* Botón en esquina derecha, posición absoluta */
     .nav-toggle {
         display: flex;
         position: absolute;
         right: 0.75rem;
         top: 50%;
-        transform: scale(0.8) translateY(-50%);
+        transform: translateY(-50%);
+        opacity: 0;
+        pointer-events: none;
     }
     .nav--solid .nav-toggle {
-        transform: scale(1) translateY(-50%);
+        opacity: 1;
+        pointer-events: auto;
     }
 
-    /* Links SIEMPRE ocultos por defecto en móvil */
+    /* Links ocultos por defecto */
     .nav-links {
         position: absolute;
         top: calc(100% + 0.5rem);
@@ -382,6 +392,13 @@
     /* Separador sutil entre items */
     .nav-links li + li .nav-links__item {
         border-top: 1px solid rgba(107, 76, 90, 0.06);
+    }
+}
+
+/* Landscape móvil: navbar con layout de desktop */
+@media (max-width: 767px) and (orientation: landscape) {
+    #navbar {
+        justify-content: space-between !important;
     }
 }
 

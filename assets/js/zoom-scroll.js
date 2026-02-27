@@ -11,7 +11,7 @@
 (() => {  'use strict';
 
     /* ---------------- CONFIGURACIÓN ---------------- */
-    const HUD_ENABLED = true;           // pon a false para ocultar el overlay
+    const HUD_ENABLED = false;          // desactivado en producción
     const WATCH_ATTR  = 'data-watch';   // cambia el nombre del atributo si quieres
     const HUD_STYLE = {
         position: 'fixed',
@@ -76,18 +76,7 @@
         hud.textContent = txt;
         }
 
-        /* 2. Tabla en consola para inspección */
-        console.clear();
-        console.group('Viewport');
-        console.table([viewportInfo()]);
-        console.groupEnd();
-
-        const watched = document.querySelectorAll(`[${WATCH_ATTR}]`);
-        if (watched.length) {
-        console.group('Watched elements');
-        watched.forEach(el => console.table([elementInfo(el)]));
-        console.groupEnd();
-        }
+        /* 2. Consola desactivada en producción */
     }
 
     /* Listeners (passive = true → scroll fluido) */
