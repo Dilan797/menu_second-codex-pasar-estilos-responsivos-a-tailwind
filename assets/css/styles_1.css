@@ -739,11 +739,12 @@
 
 /* ── Responsive ── */
 @media (max-width: 640px) {
-    #pinterest-gallery { padding: 2rem 0; }
-    .gallery-belt { gap: 10px; }
+    #pinterest-gallery { padding: 2rem 0; overflow: visible; }
+    .gallery-scroll { overflow: hidden; }
+    .gallery-belt { gap: 10px; animation-duration: 35s; }
     .gallery-col  { width: 160px; height: 320px; gap: 10px; }
-    .gallery-card { border-radius: 12px; }
-    .gallery-belt { animation-duration: 35s; }
+    .gallery-card { border-radius: 12px; min-height: 0; }
+    .gallery-card img { width: 100%; height: 100%; object-fit: cover; }
 }
 @media (min-width: 641px) and (max-width: 1024px) {
     .gallery-col  { width: 210px; height: 410px; }
@@ -772,7 +773,7 @@
 
 .servicios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 2rem;
     max-width: 1100px;
     margin: 0 auto;
@@ -800,6 +801,12 @@
 }
 .servicio-card.is-visible:hover {
     transform: translateY(-6px);
+}
+
+/* Fallback: si el observer no dispara en 2s, las tarjetas se muestran */
+.servicio-card.no-js-fallback {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .servicio-card__img {
@@ -976,6 +983,12 @@
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .testimonio-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fallback testimonios */
+.testimonio-card.no-js-fallback {
     opacity: 1;
     transform: translateY(0);
 }

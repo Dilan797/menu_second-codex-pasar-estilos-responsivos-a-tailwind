@@ -50,18 +50,29 @@
     /* --- IntersectionObserver para animar entrada --- */
     const cards = document.querySelectorAll('.servicio-card');
     if (cards.length) {
+        let revealedCount = 0;
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     setTimeout(() => {
                         entry.target.classList.add('is-visible');
-                    }, i * 100);
+                    }, revealedCount * 100);
+                    revealedCount++;
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
 
         cards.forEach(card => observer.observe(card));
+
+        /* Fallback: si tras 2.5s alguna tarjeta sigue oculta, forzar visibilidad */
+        setTimeout(() => {
+            cards.forEach(card => {
+                if (!card.classList.contains('is-visible')) {
+                    card.classList.add('no-js-fallback');
+                }
+            });
+        }, 2500);
     }
 
     /* --- Modal --- */
@@ -114,15 +125,26 @@
     if (!slider || !testimonioCards.length || !dotsContainer) return;
 
     /* --- IntersectionObserver para fade-in --- */
+    let tRevealedCount = 0;
     const obsT = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                setTimeout(() => entry.target.classList.add('is-visible'), i * 120);
+                setTimeout(() => entry.target.classList.add('is-visible'), tRevealedCount * 120);
+                tRevealedCount++;
                 obsT.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
     testimonioCards.forEach(c => obsT.observe(c));
+
+    /* Fallback: forzar visibilidad si el observer no dispara */
+    setTimeout(() => {
+        testimonioCards.forEach(c => {
+            if (!c.classList.contains('is-visible')) {
+                c.classList.add('no-js-fallback');
+            }
+        });
+    }, 2500);
 
     /* --- Calcular cuántas tarjetas se ven a la vez --- */
     const getVisible = () => {
