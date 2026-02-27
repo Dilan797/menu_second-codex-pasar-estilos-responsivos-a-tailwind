@@ -7,18 +7,18 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(45, 99%, 55%);
-  --first-color-alt: hsl(45, 99%, 48%);
-  --second-color: hsl(22, 100%, 8%);
-  --white-color: hsl(34, 100%, 96%);
-  --title-color: hsl(22, 100%, 8%);
-  --text-color: hsl(22, 24%, 32%);
-  --text-color-light: hsl(23, 16%, 40%);
-  --body-color: hsl(34, 100%, 92%);
-  --body-color-alt: hsl(34, 100%, 88%);
-  --container-color: hsl(34, 100%, 96%);
-  --shadow-small-img: drop-shadow(0 4px 16px hsla(22, 100%, 8%, .2));
-  --shadow-big-img: drop-shadow(0 8px 24px hsla(22, 100%, 8%, .2));
+  --first-color: hsl(330, 25%, 45%);
+  --first-color-alt: hsl(330, 28%, 38%);
+  --second-color: hsl(330, 30%, 15%);
+  --white-color: hsl(340, 30%, 97%);
+  --title-color: hsl(330, 30%, 15%);
+  --text-color: hsl(330, 15%, 32%);
+  --text-color-light: hsl(330, 12%, 45%);
+  --body-color: hsl(340, 30%, 93%);
+  --body-color-alt: hsl(340, 28%, 90%);
+  --container-color: hsl(340, 30%, 97%);
+  --shadow-small-img: drop-shadow(0 4px 16px hsla(330, 30%, 15%, .2));
+  --shadow-big-img: drop-shadow(0 8px 24px hsla(330, 30%, 15%, .2));
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/

@@ -41,3 +41,4 @@
     // Recalcular en resize u orientación
     window.addEventListener('resize', handleScroll, { passive: true });
 })();
+

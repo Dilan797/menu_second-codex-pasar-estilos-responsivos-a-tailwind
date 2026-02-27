@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-   <html lang="en">
+   <html lang="es">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,10 @@
       <link rel="stylesheet" href="assets/css/styles_1.css">
       <script src="https://cdn.tailwindcss.com"></script>
 
-      <title>MENÚ</title>
+      <title>Carolina Salas — Terapias de Hipopresivos</title>
    </head>
    <!--==================== HEADER ====================-->
-   <!-- Logo del nav_menú -->
-   <body>      
+   <body>
       <div class="content-wrapper">
          <header class="header" id="header">
             <nav
@@ -38,91 +37,63 @@
                         rounded-2xl transition-colors duration-300
                      "
                      >
-               <!--Opciones del nav_menú -->
-               <a href="#" class="nav__logo max-[620px]:hidden">VIVA LA VIDA</a>
-               <img src="/pictures/logo-1.png" alt="Logo" class="logo-mobile hidden max-[620px]:block w-[12vh] mt-[0vh] mx-auto">
-               <!-- 2️⃣  PANEL LATERAL (ya tenía estas clases) -->
-               <div id="nav-menu"
-                  class="nav__menu fixed left-[-15.7vw]  
-                        /* Altura reducida móvil y desktop */
-                        top-[19vh] h-[80vh] 
-                        lg:top-[8vh] lg:h-[78vh]
-                        
-                        /* Ancho responsive mejorado */
-                        w-[85%] sm:w-[75%] lg:w-[45%] xl:w-[40%] 
-                        max-w-[320px] lg:max-w-[390px]   
-                        
-                        /* Padding optimizado */
-                        px-8 py-8 lg:px-10 lg:py-10
-                        
-                        /* Fondo y efectos mejorados */
-                        bg-yellow-50/96 backdrop-blur-xl
-                        shadow-[0_20px_40px_rgba(0,0,0,0.12)] 
-                        ring-1 ring-yellow-200/60
-                        
-                        /* Layout y animación */
-                        flex flex-col items-center justify-center
-                        transition-all duration-500 ease-out
-                        z-40 overflow-hidden">
-                  <ul class="nav__list space-y-2 lg:space-y-4 
-                        lg:text-lg font-medium tracking-wide
-                                    <!-- espaciado normal entre links -->
-                        ">
-                     <li><a href="#home"         class="nav__link">Inicio</a></li>
-                     <li><a href="#recipe"       class="nav__link">Menú</a></li>
-                     <li><a href="#experiencias" class="nav__link">Experiencias</a></li>
-                     <li><a href="#sedes"        class="nav__link">Sedes</a></li>
-                     <li><a href="#contact"      class="nav__link">Contáctenos</a></li>
-                  </ul>
-               </div>
-            </nav>         
+               <a href="#" class="nav__logo max-[620px]:hidden">CAROLINA SALAS</a>
+               <img src="pictures/logo-1.png" alt="Logo" class="logo-mobile hidden max-[620px]:block w-[12vh] mt-[0vh] mx-auto">
+
+               <!-- Links de tratamientos (visibles cuando navbar tiene fondo) -->
+               <ul class="nav-links">
+                  <li><a href="#servicios" class="nav-links__item">Terapias</a></li>
+                  <li><a href="#menu-showcase" class="nav-links__item">Hipopresivos</a></li>
+                  <li><a href="#testimonios" class="nav-links__item">Testimonios</a></li>
+                  <li><a href="#contact" class="nav-links__item">Contacto</a></li>
+               </ul>
+            </nav>
          </header>
          <div class="container_1">
-            <!-- Toggle Buttom -->
-            <button id="nav-toggle"
-                        aria-label="Abrir menú"
-                        class="nav__toggle has-glow-ring 
-                              fixed top-[50vh] left-1                <!-- 👈 ahora a la izquierda -->
-                              md:left-1.5 md:top-[50%]                             <!-- un poco más separada en desktop -->
-                              flex items-center justify-center
-                              w-12 h-12 md:w-14 md:h-14
-                              bg-[hsl(45,99%,55%)] text-[var(--title-color)]
-                              rounded-full shadow-lg
-                              ring-2 ring-white/40 ring-offset-2 ring-offset-[hsl(45,99%,55%)]
-                              
-                              transition-all duration-200 ease-out
-                              z-[999]">
+            <!-- ==================== BARRA SOCIAL FIJA ==================== -->
+            <aside class="social-bar" aria-label="Redes sociales">
+               <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-bar__link" aria-label="Instagram">
+                  <i class="ri-instagram-line"></i>
+               </a>
+               <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="social-bar__link" aria-label="Facebook">
+                  <i class="ri-facebook-fill"></i>
+               </a>
+               <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="social-bar__link" aria-label="TikTok">
+                  <i class="ri-tiktok-fill"></i>
+               </a>
+               <div class="social-bar__divider"></div>
+               <a href="https://wa.me/TUNUMERO?text=Hola%2C%20quiero%20información%20sobre%20las%20terapias%20de%20hipopresivos" target="_blank" rel="noopener" class="social-bar__link social-bar__link--whatsapp" aria-label="WhatsApp">
+                  <i class="ri-whatsapp-line"></i>
+               </a>
+            </aside>
+            <!--==================== HERO CAROLINA ==================== -->
+            <section class="hero-carolina" id="home">
+               <img src="assets/img/carolina-salas.jpg" alt="Carolina Salas — Psicóloga, especialista en obesidad y trastornos alimentarios, técnicas manuales no invasivas" class="hero-carolina__img">
+            </section>
 
-                  <!-- Si usas PNG / WebP -->
-                  <img src="/pictures/fondo-nav.png" class="w-10 h-10 invert-[10%] contrast-200" alt="">
-            </button>
             <!--==================== MAIN ====================-->
-            <main class="main bg-[rgba(255,255,255,0.8)] 
-               w-[92%] max-w-[800px] mx-auto mt-20 mb-8 p-8 shadow-md rounded-2xl  
+            <main class="main bg-[rgba(255,255,255,0.8)]
+               w-[96%] sm:w-[92%] max-w-[800px] mx-auto mt-16 sm:mt-20 mb-8 p-4 sm:p-6 lg:p-8 shadow-md rounded-2xl
                lg:w-[50vw] lg:ml-auto lg:max-w-none lg:px-12 lg:sticky lg:top-32 lg:mt-6 lg:rounded-l-2xl lg:m-0 lg:h-[92vh]">
-               <!--==================== HOME ====================-->
-               <section class="home section" id="home">
-                  
+
+               <!--==================== TERAPIAS ====================-->
+               <section class="recipe section" id="terapias">
+
                </section>
 
-               <!--==================== RECIPE ====================-->
-               <section class="recipe section" id="recipe">
-                  
+               <!--==================== BENEFICIOS ====================-->
+               <section class="popular section" id="beneficios">
+
                </section>
 
-               <!--==================== POPULAR ====================-->
-               <section class="popular section" id="popular">
-                  
+               <!--==================== HORARIOS ====================-->
+               <section class="delivery section" id="horarios">
+
                </section>
 
-               <!--==================== DELIVERY ====================-->
-               <section class="delivery section" id="delivery">
-                  
-               </section>
-
-               <!--==================== CONTACT ====================-->
+               <!--==================== CONTACTO ====================-->
                <section class="contact section" id="contact">
-                  
+
                </section>
             </main>
             <!--==================== FOOTER ====================-->
@@ -130,67 +101,307 @@
       
          </footer>
       </div>
-         <div class="overlay"></div>
       </div>
 
       <!--========== SCROLL UP ==========-->
       <!-- SECTION ---------------------------------------------------------------->
       <section id="menu-showcase"
-         class="relative w-full min-h-[160vh]
+         class="relative w-full min-h-screen lg:min-h-[160vh]
                         flex flex-col lg:grid lg:grid-cols-2 lg:gap-6">
 
          <!-- TEXTO FIJO --------------------------------------------------------->
-            <div class="self-start px-6 py-16  lg:px-12 lg:py-12 lg:sticky lg:top-24">
-               <h2 class="text-4xl lg:text-5xl font-serif text-[#143964] mb-6 ">
-                  La huerta, el mar <br>y las estaciones
+            <div class="self-start px-4 py-10 sm:px-6 sm:py-16 lg:pl-20 lg:pr-12 lg:py-12 lg:sticky lg:top-24">
+               <h2 class="text-2xl sm:text-3xl lg:text-5xl font-serif text-[#6B4C5A] mb-6">
+                  Tu cuerpo, tu bienestar <br>y tu transformación
                </h2>
-               <p class="text-lg lg:text-xl leading-relaxed text-[#143964]/90">
-                  Seleccionamos diariamente los mejores productos de temporada para
-                  sorprenderte con una carta viva, fresca y en continua evolución.
-                  Déjate guiar por la sabiduría de nuestros agricultores,
-                  pescadores y artesanos locales.
+               <p class="text-lg lg:text-xl leading-relaxed text-[#6B4C5A]/85">
+                  La gimnasia hipopresiva es una técnica postural y respiratoria
+                  que reduce la presión intraabdominal, fortalece el core profundo
+                  y rehabilita el suelo pélvico. Mediante la aspiración diafragmática
+                  y posturas específicas, logramos resultados visibles en pocas semanas:
+                  menos cintura, mejor postura, más vitalidad.
                </p>
             </div>
 
          <!-- COLUMNA DERECHA : 3 círculos --------------------------------------->
-            <div class="relative flex flex-col items-center gap-14 py-16 lg:py-24">
+            <div class="relative flex flex-col items-center gap-8 sm:gap-14 py-16 lg:py-24">
 
                <!-- CÍRCULO 1 -->
-               <div class="w-72 h-72 sm:w-96 sm:h-96 lg:w-[520px] lg:h-[520px]
-                           rounded-full overflow-hidden bg-[#0e264e]/80">
+               <div class="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]
+                           rounded-full overflow-hidden bg-[#4A2E3D]/80">
                   <div class="img-track space-y-6 p-6">
-                     <img src="assets/img/plato-1.jpg" class="w-full rounded-xl shadow-lg" alt="">
-                     <img src="assets/img/plato-2.jpg" class="w-full rounded-xl shadow-lg" alt="">
-                     <img src="assets/img/plato-3.jpg" class="w-full rounded-xl shadow-lg" alt="">
+                     <img src="assets/img/sesiones/sesion-1.jpg" class="w-full rounded-xl shadow-lg" alt="Sesión de hipopresivos">
+                     <img src="assets/img/sesiones/sesion-2.jpg" class="w-full rounded-xl shadow-lg" alt="Postura hipopresiva">
+                     <img src="assets/img/sesiones/sesion-3.jpg" class="w-full rounded-xl shadow-lg" alt="Técnica de respiración">
                   </div>
                </div>
 
                <!-- CÍRCULO 2 -->
-               <div class="w-72 h-72 sm:w-96 sm:h-96 lg:w-[520px] lg:h-[520px]
-                           rounded-full overflow-hidden bg-[#0e264e]/80">
+               <div class="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]
+                           rounded-full overflow-hidden bg-[#4A2E3D]/80">
                   <div class="img-track space-y-6 p-6">
-                     <img src="assets/img/plato-4.jpg" class="w-full rounded-xl shadow-lg" alt="">
-                     <img src="assets/img/plato-5.jpg" class="w-full rounded-xl shadow-lg" alt="">
-                     <img src="assets/img/plato-6.jpg" class="w-full rounded-xl shadow-lg" alt="">
+                     <img src="assets/img/sesiones/sesion-4.jpg" class="w-full rounded-xl shadow-lg" alt="Terapia grupal">
+                     <img src="assets/img/sesiones/sesion-5.jpg" class="w-full rounded-xl shadow-lg" alt="Ejercicio de core">
+                     <img src="assets/img/sesiones/sesion-6.jpg" class="w-full rounded-xl shadow-lg" alt="Recuperación postparto">
                   </div>
                </div>
 
                <!-- CÍRCULO 3 -->
-               <div class="w-72 h-72 sm:w-96 sm:h-96 lg:w-[520px] lg:h-[520px]
-                           rounded-full overflow-hidden bg-[#0e264e]/80">
+               <div class="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 lg:w-[520px] lg:h-[520px]
+                           rounded-full overflow-hidden bg-[#4A2E3D]/80">
                   <div class="img-track space-y-6 p-6">
-                     <img src="assets/img/plato-7.jpg" class="w-full rounded-xl shadow-lg" alt="">
-                     <img src="assets/img/plato-8.jpg" class="w-full rounded-xl shadow-lg" alt="">
-                     <img src="assets/img/plato-9.jpg" class="w-full rounded-xl shadow-lg" alt="">
+                     <img src="assets/img/sesiones/sesion-7.jpg" class="w-full rounded-xl shadow-lg" alt="Suelo pélvico">
+                     <img src="assets/img/sesiones/sesion-8.jpg" class="w-full rounded-xl shadow-lg" alt="Pilates e hipopresivos">
+                     <img src="assets/img/sesiones/sesion-9.jpg" class="w-full rounded-xl shadow-lg" alt="Bienestar integral">
                   </div>
                </div>
 
             </div>
          </section>
 
+      <!-- ==================== PINTEREST GALLERY ==================== -->
+      <section id="pinterest-gallery">
+         <div class="gallery-header">
+            <h2>Nuestro espacio y sesiones</h2>
+            <p>Un recorrido visual por nuestras terapias</p>
+         </div>
 
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src=""></script>
+         <div class="gallery-scroll">
+            <div class="gallery-belt">
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-1.jpg" alt="Sesión hipopresiva"></div>
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-2.jpg" alt="Espacio de terapia"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-3.jpg" alt="Clase grupal"></div>
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-4.jpg" alt="Postura hipopresiva"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-5.jpg" alt="Respiración guiada"></div>
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-6.jpg" alt="Ejercicio de core"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-7.jpg" alt="Suelo pélvico"></div>
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-8.jpg" alt="Recuperación postparto"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-9.jpg" alt="Hipopresivos y pilates"></div>
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-10.jpg" alt="Sesión personalizada"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-11.jpg" alt="Bienestar integral"></div>
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-12.jpg" alt="Espacio Carolina Salas"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-13.jpg" alt="Técnica avanzada"></div>
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-14.jpg" alt="Resultados reales"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-15.jpg" alt="Clase de hipopresivos"></div>
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-16.jpg" alt="Transformación corporal"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-17.jpg" alt="Vacío abdominal"></div>
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-18.jpg" alt="Nuestro centro"></div>
+               </div>
+
+               <!-- Duplicado para loop infinito -->
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-1.jpg" alt="Sesión hipopresiva"></div>
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-2.jpg" alt="Espacio de terapia"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-3.jpg" alt="Clase grupal"></div>
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-4.jpg" alt="Postura hipopresiva"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-5.jpg" alt="Respiración guiada"></div>
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-6.jpg" alt="Ejercicio de core"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-7.jpg" alt="Suelo pélvico"></div>
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-8.jpg" alt="Recuperación postparto"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-9.jpg" alt="Hipopresivos y pilates"></div>
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-10.jpg" alt="Sesión personalizada"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-11.jpg" alt="Bienestar integral"></div>
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-12.jpg" alt="Espacio Carolina Salas"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-13.jpg" alt="Técnica avanzada"></div>
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-14.jpg" alt="Resultados reales"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-15.jpg" alt="Clase de hipopresivos"></div>
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/galeria/galeria-16.jpg" alt="Transformación corporal"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--short"><img src="assets/img/galeria/galeria-17.jpg" alt="Vacío abdominal"></div>
+                  <div class="gallery-card gallery-card--medium"><img src="assets/img/galeria/galeria-18.jpg" alt="Nuestro centro"></div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- ==================== SERVICIOS ==================== -->
+      <section id="servicios">
+         <div class="servicios-header">
+            <h2>Nuestras Terapias</h2>
+            <p>Bienestar integral a través de la gimnasia hipopresiva</p>
+         </div>
+         <div class="servicios-grid">
+            <article class="servicio-card" data-service="0">
+               <div class="servicio-card__img"><img src="assets/img/servicios/basico.jpg" alt="Hipopresivos Básico"></div>
+               <div class="servicio-card__body">
+                  <h3>Hipopresivos Básico</h3>
+                  <p>Iniciación a la técnica hipopresiva con posturas fundamentales y respiración guiada.</p>
+               </div>
+            </article>
+            <article class="servicio-card" data-service="1">
+               <div class="servicio-card__img"><img src="assets/img/servicios/avanzado.jpg" alt="Hipopresivos Avanzado"></div>
+               <div class="servicio-card__body">
+                  <h3>Hipopresivos Avanzado</h3>
+                  <p>Secuencias dinámicas para fortalecer el core y mejorar la postura corporal.</p>
+               </div>
+            </article>
+            <article class="servicio-card" data-service="2">
+               <div class="servicio-card__img"><img src="assets/img/servicios/postparto.jpg" alt="Recuperación Postparto"></div>
+               <div class="servicio-card__body">
+                  <h3>Recuperación Postparto</h3>
+                  <p>Programa especializado para recuperar el suelo pélvico y la faja abdominal tras el parto.</p>
+               </div>
+            </article>
+            <article class="servicio-card" data-service="3">
+               <div class="servicio-card__img"><img src="assets/img/servicios/suelo-pelvico.jpg" alt="Terapia de Suelo Pélvico"></div>
+               <div class="servicio-card__body">
+                  <h3>Terapia de Suelo Pélvico</h3>
+                  <p>Fortalecimiento y rehabilitación del suelo pélvico para prevenir disfunciones.</p>
+               </div>
+            </article>
+            <article class="servicio-card" data-service="4">
+               <div class="servicio-card__img"><img src="assets/img/servicios/pilates.jpg" alt="Hipopresivos & Pilates"></div>
+               <div class="servicio-card__body">
+                  <h3>Hipopresivos &amp; Pilates</h3>
+                  <p>Fusión de hipopresivos con pilates para un trabajo corporal completo y equilibrado.</p>
+               </div>
+            </article>
+            <article class="servicio-card" data-service="5">
+               <div class="servicio-card__img"><img src="assets/img/servicios/personalizada.jpg" alt="Sesión Personalizada"></div>
+               <div class="servicio-card__body">
+                  <h3>Sesión Personalizada</h3>
+                  <p>Valoración individual y plan de terapia adaptado a tus necesidades específicas.</p>
+               </div>
+            </article>
+         </div>
+      </section>
+
+      <!-- ==================== TESTIMONIOS ==================== -->
+      <section id="testimonios">
+         <div class="testimonios-header">
+            <h2>Lo que dicen nuestras pacientes</h2>
+            <p>Resultados reales con la gimnasia hipopresiva</p>
+         </div>
+         <div class="testimonios-track">
+            <div class="testimonios-slider">
+               <article class="testimonio-card">
+                  <div class="testimonio-card__stars">
+                     <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                  </div>
+                  <blockquote class="testimonio-card__quote">
+                     &ldquo;Después de dos embarazos tenía diástasis abdominal severa. Con 3 meses de hipopresivos recuperé mi faja abdominal de forma increíble. Mi fisioterapeuta no lo podía creer.&rdquo;
+                  </blockquote>
+                  <div class="testimonio-card__author">
+                     <div class="testimonio-card__avatar">MC</div>
+                     <div>
+                        <strong>María Castillo</strong>
+                        <span>Recuperación Postparto</span>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="testimonio-card">
+                  <div class="testimonio-card__stars">
+                     <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                  </div>
+                  <blockquote class="testimonio-card__quote">
+                     &ldquo;Sufría de incontinencia urinaria y me daba vergüenza hablar del tema. Aquí me trataron con total profesionalismo y en pocas semanas noté una mejora enorme en mi suelo pélvico.&rdquo;
+                  </blockquote>
+                  <div class="testimonio-card__author">
+                     <div class="testimonio-card__avatar">LR</div>
+                     <div>
+                        <strong>Laura Rodríguez</strong>
+                        <span>Terapia de Suelo Pélvico</span>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="testimonio-card">
+                  <div class="testimonio-card__stars">
+                     <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+                  </div>
+                  <blockquote class="testimonio-card__quote">
+                     &ldquo;Empecé en el nivel básico sin saber nada de hipopresivos. La técnica de respiración cambió mi postura y eliminó el dolor de espalda que arrastraba desde hace años.&rdquo;
+                  </blockquote>
+                  <div class="testimonio-card__author">
+                     <div class="testimonio-card__avatar">AP</div>
+                     <div>
+                        <strong>Andrea Pérez</strong>
+                        <span>Hipopresivos Básico</span>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="testimonio-card">
+                  <div class="testimonio-card__stars">
+                     <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                  </div>
+                  <blockquote class="testimonio-card__quote">
+                     &ldquo;Combiné las sesiones de hipopresivos con pilates y los resultados han sido espectaculares. Mi cintura se redujo, mi core está fuerte y me siento con más energía que nunca.&rdquo;
+                  </blockquote>
+                  <div class="testimonio-card__author">
+                     <div class="testimonio-card__avatar">SG</div>
+                     <div>
+                        <strong>Sofía Gómez</strong>
+                        <span>Hipopresivos &amp; Pilates</span>
+                     </div>
+                  </div>
+               </article>
+
+               <article class="testimonio-card">
+                  <div class="testimonio-card__stars">
+                     <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                  </div>
+                  <blockquote class="testimonio-card__quote">
+                     &ldquo;La sesión personalizada fue clave. Evaluaron mi caso particular — prolapso leve — y diseñaron un plan a medida. Hoy llevo una vida activa sin molestias. Totalmente recomendado.&rdquo;
+                  </blockquote>
+                  <div class="testimonio-card__author">
+                     <div class="testimonio-card__avatar">VT</div>
+                     <div>
+                        <strong>Valentina Torres</strong>
+                        <span>Sesión Personalizada</span>
+                     </div>
+                  </div>
+               </article>
+            </div>
+         </div>
+         <div class="testimonios-dots"></div>
+      </section>
+
+      <!-- Modal de servicio -->
+      <div id="servicio-modal" class="servicio-modal" aria-hidden="true">
+         <div class="servicio-modal__backdrop"></div>
+         <div class="servicio-modal__panel">
+            <button class="servicio-modal__close" aria-label="Cerrar">&times;</button>
+            <img class="servicio-modal__img" src="" alt="">
+            <div class="servicio-modal__content">
+               <h3></h3>
+               <p></p>
+            </div>
+         </div>
+      </div>
 
       <!--=============== MAIN JS ===============-->
       <script src="assets/js/main.js"></script>
