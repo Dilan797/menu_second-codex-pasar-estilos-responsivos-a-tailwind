@@ -476,18 +476,19 @@
         margin-left: auto;
         max-width: none;
         padding: 2.5rem 3rem;
-        margin-top: 6rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
         border-radius: 2rem 0 0 2rem;
         box-shadow: -4px 0 24px rgba(107, 76, 90, 0.08);
         position: sticky;
-        top: 7rem;
-        height: calc(100vh - 8rem);
-        height: calc(100dvh - 8rem);
+        top: 2rem;
+        height: calc(100vh - 4rem);
+        height: calc(100dvh - 4rem);
         overflow-y: auto;
     }
 }
 
-/* Landscape móvil: mismo panel */
+/* Landscape móvil: mismo panel proporcionado */
 @media (max-width: 1023px) and (orientation: landscape) {
     .main-panel {
         display: block;
@@ -496,13 +497,14 @@
         margin-left: auto;
         padding: 1.5rem 2rem;
         padding-right: max(2rem, env(safe-area-inset-right));
-        margin-top: 3.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         border-radius: 1.5rem 0 0 1.5rem;
         box-shadow: -4px 0 24px rgba(107, 76, 90, 0.08);
         position: sticky;
-        top: 3.5rem;
-        height: calc(100vh - 4rem);
-        height: calc(100dvh - 4rem);
+        top: 1rem;
+        height: calc(100vh - 2rem);
+        height: calc(100dvh - 2rem);
         overflow-y: auto;
     }
 }
