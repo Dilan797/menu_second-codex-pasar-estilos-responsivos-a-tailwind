@@ -462,7 +462,50 @@
     }
 }
 
-/*=============== MAIN ===============*/
+/*=============== PANEL INICIO ===============*/
+.main-panel {
+    display: none;
+}
+
+/* Desktop: panel blanco mitad derecha */
+@media (min-width: 1024px) {
+    .main-panel {
+        display: block;
+        background: rgba(255, 255, 255, 0.8);
+        width: 50vw;
+        margin-left: auto;
+        max-width: none;
+        padding: 2.5rem 3rem;
+        margin-top: 6rem;
+        border-radius: 2rem 0 0 2rem;
+        box-shadow: -4px 0 24px rgba(107, 76, 90, 0.08);
+        position: sticky;
+        top: 7rem;
+        height: calc(100vh - 8rem);
+        height: calc(100dvh - 8rem);
+        overflow-y: auto;
+    }
+}
+
+/* Landscape móvil: mismo panel */
+@media (max-width: 1023px) and (orientation: landscape) {
+    .main-panel {
+        display: block;
+        background: rgba(255, 255, 255, 0.8);
+        width: 50vw;
+        margin-left: auto;
+        padding: 1.5rem 2rem;
+        padding-right: max(2rem, env(safe-area-inset-right));
+        margin-top: 3.5rem;
+        border-radius: 1.5rem 0 0 1.5rem;
+        box-shadow: -4px 0 24px rgba(107, 76, 90, 0.08);
+        position: sticky;
+        top: 3.5rem;
+        height: calc(100vh - 4rem);
+        height: calc(100dvh - 4rem);
+        overflow-y: auto;
+    }
+}
 /*=============== LANDSCAPE MÓVIL — optimización general ===============*/
 @media (max-width: 1023px) and (orientation: landscape) {
     #servicios,
