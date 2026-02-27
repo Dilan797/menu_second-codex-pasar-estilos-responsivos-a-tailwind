@@ -1079,3 +1079,45 @@
         display: none;
     }
 }
+
+/*=============== MOBILE FIX — forzar visibilidad de TODAS las imágenes ===============*/
+@media (max-width: 768px) {
+    /* === SERVICIOS: quitar animación opacity en móvil === */
+    .servicio-card {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* === TESTIMONIOS: quitar animación opacity en móvil === */
+    .testimonio-card {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* === GALERÍA: forzar dimensiones y visibilidad de imágenes === */
+    .gallery-card {
+        position: relative;
+        overflow: hidden;
+    }
+    .gallery-card img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* === SERVICIOS IMG: forzar que la imagen llene el contenedor === */
+    .servicio-card__img {
+        position: relative;
+        min-height: 180px;
+    }
+    .servicio-card__img img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+}

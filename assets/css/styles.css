@@ -81,6 +81,16 @@ img {
   height: auto;
 }
 
+/* Imágenes dentro de contenedores con altura definida deben llenar el espacio */
+.gallery-card img,
+.servicio-card__img img,
+.circle-static img {
+  height: 100% !important;
+  max-width: none;
+  width: 100%;
+  object-fit: cover;
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 800px;
