@@ -582,8 +582,8 @@
     display: block;
     width: 100%;
     max-width: calc(100% - 1.5rem);
-    max-height: calc(100vh - 7rem);
-    max-height: calc(100dvh - 7rem);
+    max-height: calc(100vh - 5.5rem);
+    max-height: calc(100dvh - 5.5rem);
     height: auto;
     object-fit: cover;
     border: 1.5px solid var(--glass-border);
@@ -644,8 +644,9 @@
 /* For small devices */
 @media (max-width: 480px) {
     .nav__logo {
-        font-size: 1.15rem;
+        font-size: 1.6rem;
         letter-spacing: 0.1em;
+        font-weight: 500;
     }
 }
 
