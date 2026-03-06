@@ -328,7 +328,7 @@
 
 .nav__logo {
     color: var(--color-text-primary);
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     margin-left: initial;
     font-weight: 300;
     text-decoration: none;
@@ -644,7 +644,7 @@
 /* For small devices */
 @media (max-width: 480px) {
     .nav__logo {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         letter-spacing: 0.1em;
     }
 }
