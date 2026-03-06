@@ -1,29 +1,44 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Aclonica&family=Montserrat:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@100..900&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
 
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(330, 25%, 45%);
-  --first-color-alt: hsl(330, 28%, 38%);
-  --second-color: hsl(330, 30%, 15%);
-  --white-color: hsl(340, 30%, 97%);
-  --title-color: hsl(330, 30%, 15%);
-  --text-color: hsl(330, 15%, 32%);
-  --text-color-light: hsl(330, 12%, 45%);
-  --body-color: hsl(340, 30%, 93%);
-  --body-color-alt: hsl(340, 28%, 90%);
-  --container-color: hsl(340, 30%, 97%);
-  --shadow-small-img: drop-shadow(0 4px 16px hsla(330, 30%, 15%, .2));
-  --shadow-big-img: drop-shadow(0 8px 24px hsla(330, 30%, 15%, .2));
+  /*========== Core palette ==========*/
+  --color-bg-body: #0b1120;
+  --color-bg-card: #121d33;
+  --color-bg-surface: #182744;
+  --color-accent-main: #7ecfea;
+  --color-accent-glow: #5ab8d8;
+  --color-accent-gold: #c9a84c;
+  --color-text-primary: #f0f4f8;
+  --color-text-secondary: rgba(240,244,248,0.7);
+  --color-text-muted: rgba(240,244,248,0.45);
+
+  /*========== Glassmorphism tokens ==========*/
+  --glass-bg: rgba(18,29,51,0.75);
+  --glass-border: rgba(126,207,234,0.12);
+  --glass-blur: blur(14px);
+
+  /*========== Semantic aliases (legacy compat) ==========*/
+  --first-color: var(--color-accent-main);
+  --first-color-alt: var(--color-accent-glow);
+  --second-color: var(--color-bg-body);
+  --white-color: var(--color-text-primary);
+  --title-color: var(--color-text-primary);
+  --text-color: var(--color-text-secondary);
+  --text-color-light: var(--color-text-muted);
+  --body-color: var(--color-bg-body);
+  --body-color-alt: var(--color-bg-card);
+  --container-color: var(--color-bg-card);
+  --shadow-small-img: drop-shadow(0 4px 16px rgba(0,0,0,.35));
+  --shadow-big-img: drop-shadow(0 8px 24px rgba(0,0,0,.4));
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Montserrat", sans-serif;
-  --second-font: "Aclonica", sans-serif;
+  --second-font: "Cormorant Garamond", serif;
   --biggest-font-size: 3rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -65,6 +80,8 @@ h1, h2, h3, h4 {
   color: var(--title-color);
   font-family: var(--second-font);
   font-weight: var(--font-regular);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 ul {
@@ -82,7 +99,7 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  max-width: 800px;
+  max-width: 1100px;
   margin-inline: 1.5rem;
 }
 

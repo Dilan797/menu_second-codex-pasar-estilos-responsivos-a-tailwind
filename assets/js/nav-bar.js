@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setTransparent() {
         nav.classList.add('bg-transparent');
-        nav.classList.remove('nav--solid', 'shadow-[0_2px_12px_rgba(107,76,90,0.12)]');
+        nav.classList.remove('nav--solid', 'shadow-[0_2px_16px_rgba(0,0,0,0.35)]');
     }
 
     function setSolid() {
-        nav.classList.add('nav--solid', 'shadow-[0_2px_12px_rgba(107,76,90,0.12)]');
+        nav.classList.add('nav--solid', 'shadow-[0_2px_16px_rgba(0,0,0,0.35)]');
         nav.classList.remove('bg-transparent');
     }
 
