@@ -1,4 +1,16 @@
     /* (Menú lateral eliminado — reemplazado por barra social fija) */
+
+/*=============== CHROME FIX: forzar decodificación de imágenes ===============*/
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.gallery-card img, .servicio-card__img img').forEach(img => {
+        if (!img.complete || img.naturalWidth === 0) {
+            const src = img.src;
+            img.src = '';
+            img.src = src;
+        }
+    });
+});
+
 /*=============== VIDEO SCROLL EFFECT ===============*/
 
     /*=============== ADD SHADOW HEADER ===============*/
