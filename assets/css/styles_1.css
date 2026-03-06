@@ -691,7 +691,6 @@
     display: flex;
     gap: 14px;
     width: max-content;
-    will-change: transform;
     animation: belt-slide 50s linear infinite;
 }
 .gallery-scroll:hover .gallery-belt {
@@ -728,9 +727,6 @@
 .gallery-card--short  { flex: 1; }
 
 .gallery-card img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -818,9 +814,6 @@
     background: #8B7080;
 }
 .servicio-card__img img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
