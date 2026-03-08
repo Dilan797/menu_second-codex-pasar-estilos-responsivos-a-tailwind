@@ -1,6 +1,9 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Lato:wght@300;400;700&family=Montserrat:wght@100..900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+/*=============== POSTERAMA 2001 — fuente para títulos ===============*/
+@import url("https://db.onlinewebfonts.com/c/ea250342ec4016561ba9e791c2f39c11?family=Posterama+2001+W04+Regular");
+
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
@@ -37,7 +40,7 @@
   --shadow-big-img: drop-shadow(0 8px 24px rgba(0,0,0,.4));
 
   /*========== Font and typography ==========*/
-  --font-hero: "Bebas Neue", "Oswald", sans-serif;
+  --font-hero: "Posterama 2001 W04 Regular", "Bebas Neue", "Oswald", sans-serif;
   --font-heading: "Montserrat", sans-serif;
   --body-font: "Lato", "Open Sans", sans-serif;
   --second-font: "Cormorant Garamond", serif;

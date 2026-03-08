@@ -355,11 +355,10 @@
     margin-left: initial;
     font-weight: 760;
     text-decoration: none;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Posterama 2001 W04 Regular", "Montserrat", sans-serif;
     flex-shrink: 0;
     letter-spacing: 7px;
     text-transform: uppercase;
-    font-stretch: expanded;
 }
 
 /*=============== NAV TOGGLE (boton animado movil) ===============*/
@@ -709,7 +708,7 @@
     text-align: center;
 }
 .gallery-header h2 {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
     font-weight: 400;
     line-height: 0.92;
     margin-bottom: 0.5rem;
@@ -822,7 +821,7 @@
     margin-bottom: 3rem;
 }
 .servicios-header h2 {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
     font-weight: 400;
     line-height: 0.9;
     margin-bottom: 0.5rem;
@@ -912,13 +911,14 @@
     padding: 1.25rem 1.5rem 1.5rem;
 }
 .servicio-card__body h3 {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
     color: #FFFFFF;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.15rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
 }
 .servicio-card__body p {
     font-family: "Lato", sans-serif;
@@ -1005,7 +1005,7 @@
     padding: 1.5rem 2rem 2rem;
 }
 .servicio-modal__content h3 {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
     font-size: 2rem;
     font-weight: 400;
     color: #FFFFFF;
@@ -1040,7 +1040,7 @@
     margin-bottom: 3rem;
 }
 .testimonios-header h2 {
-    font-family: "Bebas Neue", sans-serif;
+    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
     font-weight: 400;
     line-height: 0.9;
     margin-bottom: 0.5rem;
