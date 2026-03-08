@@ -14,8 +14,8 @@
       <script src="https://cdn.tailwindcss.com"></script>
 
       <!--=============== CSS (después de Tailwind para ganar en cascada) ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css?v=20">
-      <link rel="stylesheet" href="assets/css/styles_1.css?v=20">
+      <link rel="stylesheet" href="assets/css/styles.css?v=30">
+      <link rel="stylesheet" href="assets/css/styles_1.css?v=30">
 
       <title>Carolina Salas — Terapias de Hipopresivos</title>
    </head>
@@ -83,7 +83,12 @@
             <section class="inicio-desktop" id="home-desktop">
                <div class="inicio-desktop__texto">
                   <p class="inicio-desktop__kicker">Terapias de Hipopresivos</p>
-                  <h1 class="inicio-desktop__title">Tu bienestar comienza desde adentro</h1>
+                  <h1 class="inicio-desktop__title">
+                     <span class="st-line st-line--1">Tu</span>
+                     <span class="st-line st-line--2">Bienestar</span>
+                     <span class="st-line st-line--3">Comienza</span>
+                     <span class="st-line st-line--4">Desde Adentro</span>
+                  </h1>
                   <p class="inicio-desktop__desc">
                      Técnicas posturales y respiratorias que fortalecen tu core profundo,
                      rehabilitan el suelo pélvico y transforman tu cuerpo de forma segura y natural.
@@ -109,13 +114,18 @@
                         flex flex-col lg:grid lg:grid-cols-2 lg:gap-6">
 
          <!-- TEXTO FIJO --------------------------------------------------------->
-            <div class="self-start px-6 py-10 sm:px-8 sm:py-16 lg:pl-28 lg:pr-14 lg:py-16 lg:sticky lg:top-[15vh]">
-               <p class="text-xs tracking-[0.2em] uppercase text-[#f0f4f8]/40 mb-4 font-medium">Gimnasia Hipopresiva</p>
-               <h2 class="text-xl sm:text-2xl lg:text-[2.2rem] lg:leading-[1.2] font-['Cormorant_Garamond',serif] font-normal text-[#7ecfea] mb-4">
-                  Tu cuerpo, tu bienestar<br>y tu transformación
+            <div class="showcase-texto self-start px-6 py-10 sm:px-8 sm:py-16 lg:pl-28 lg:pr-14 lg:py-16 lg:sticky lg:top-[15vh]
+                        text-center lg:text-left">
+               <p class="text-xs sm:text-sm tracking-[0.3em] uppercase text-[#7BB8D4] mb-3 font-light font-['Montserrat',sans-serif]">Gimnasia Hipopresiva</p>
+               <h2 class="showcase-titulo font-['Bebas_Neue',sans-serif] font-normal mb-4" style="line-height:0.92">
+                  <span class="block text-[#7BB8D4] text-2xl sm:text-3xl lg:text-[2rem] uppercase" style="line-height:0.92">Tu cuerpo</span>
+                  <span class="block text-white text-4xl sm:text-5xl lg:text-[3.5rem] uppercase" style="line-height:0.92;letter-spacing:-1px">Tu bienestar</span>
+                  <span class="block text-[#7BB8D4] text-3xl sm:text-4xl lg:text-[2.5rem] uppercase" style="line-height:0.92">Y tu</span>
+                  <span class="block text-white text-5xl sm:text-6xl lg:text-[4.5rem] uppercase" style="line-height:0.92;letter-spacing:-2px">Transformación</span>
                </h2>
-               <div class="w-10 h-[2px] bg-[#c9a84c] mb-5"></div>
-               <p class="text-[0.85rem] sm:text-sm lg:text-base leading-[1.7] text-[#f0f4f8]/70 max-w-[480px]">
+               <div class="w-12 h-[2px] bg-[#c9a84c] mb-5 mx-auto lg:mx-0"></div>
+               <p class="text-sm sm:text-base lg:text-base leading-[1.7] text-[#A0B4C8] max-w-[480px] font-light font-['Lato',sans-serif]
+                         mx-auto lg:mx-0">
                   La gimnasia hipopresiva es una técnica postural y respiratoria
                   que reduce la presión intraabdominal, fortalece el core profundo
                   y rehabilita el suelo pélvico. Mediante la aspiración diafragmática
@@ -148,7 +158,7 @@
       <!-- ==================== PINTEREST GALLERY ==================== -->
       <section id="pinterest-gallery">
          <div class="gallery-header">
-            <h2>Nuestro espacio y sesiones</h2>
+            <h2><span class="st-line st-line--accent">Nuestro</span><span class="st-line st-line--white">Espacio</span></h2>
             <p>Un recorrido visual por nuestras terapias</p>
          </div>
 
@@ -235,7 +245,7 @@
       <!-- ==================== SERVICIOS ==================== -->
       <section id="servicios">
          <div class="servicios-header">
-            <h2>Nuestras Terapias</h2>
+            <h2><span class="st-line st-line--accent">Nuestras</span><span class="st-line st-line--white">Terapias</span></h2>
             <p>Bienestar integral a través de la gimnasia hipopresiva</p>
          </div>
          <div class="servicios-grid">
@@ -287,7 +297,7 @@
       <!-- ==================== TESTIMONIOS ==================== -->
       <section id="testimonios">
          <div class="testimonios-header">
-            <h2>Lo que dicen nuestras pacientes</h2>
+            <h2><span class="st-line st-line--accent">Lo que dicen</span><span class="st-line st-line--white">Nuestras Pacientes</span></h2>
             <p>Resultados reales con la gimnasia hipopresiva</p>
          </div>
          <div class="testimonios-track">
@@ -390,9 +400,9 @@
       </div>
 
       <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js?v=20"></script>
-      <script src="assets/js/zoom-scroll.js?v=20"></script>
-      <script src="assets/js/nav-bar.js?v=20"></script>
-      <script src="assets/js/scroll.js?v=20"></script>
+      <script src="assets/js/main.js?v=30"></script>
+      <script src="assets/js/zoom-scroll.js?v=30"></script>
+      <script src="assets/js/nav-bar.js?v=30"></script>
+      <script src="assets/js/scroll.js?v=30"></script>
       </body>
 </html>

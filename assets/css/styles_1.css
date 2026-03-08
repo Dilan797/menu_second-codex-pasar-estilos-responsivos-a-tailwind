@@ -49,30 +49,46 @@
 
 .inicio-desktop__kicker {
     display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 2.5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-accent-main);
     margin-bottom: 0.6rem;
 }
 
 .inicio-desktop__title {
-    font-family: var(--second-font);
+    font-family: var(--font-hero, "Bebas Neue", sans-serif);
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     color: var(--color-accent-main);
     margin-bottom: 1rem;
-    line-height: 1.15;
+    line-height: 0.95;
     font-weight: 400;
 }
 
+/* Titulo apilado del hero — cada linea con tamaño diferente */
+.inicio-desktop__title .st-line {
+    display: block;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+.inicio-desktop__title .st-line--1 { font-size: clamp(1.7rem, 2.42vw, 2.42rem); color: #7BB8D4; }
+.inicio-desktop__title .st-line--2 { font-size: clamp(2.66rem, 4.24vw, 4.24rem); color: #FFFFFF; letter-spacing: -1px; }
+.inicio-desktop__title .st-line--3 { font-size: clamp(1.94rem, 3.03vw, 3.03rem); color: #7BB8D4; }
+.inicio-desktop__title .st-line--4 { font-size: clamp(1.82rem, 2.66vw, 2.66rem); color: #FFFFFF; }
+
 .inicio-desktop__desc {
+    font-family: "Lato", "Open Sans", sans-serif;
     font-size: 0.85rem;
     font-weight: 300;
-    color: var(--color-text-secondary);
-    line-height: 1.5;
+    color: #A0B4C8;
+    line-height: 1.6;
     margin-bottom: 0.75rem;
     letter-spacing: 0.2px;
+    max-width: 500px;
 }
 
 .inicio-desktop__desc:last-of-type {
@@ -84,19 +100,22 @@
     display: inline-block;
     padding: 0.65rem 1.8rem;
     background: transparent;
-    color: var(--color-accent-main);
-    border: 1.5px solid var(--color-accent-main);
+    color: #7BB8D4;
+    border: 1.5px solid #7BB8D4;
     border-radius: 2px;
+    font-family: "Montserrat", sans-serif;
     font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     text-decoration: none;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .inicio-desktop__cta:hover {
-    background: var(--color-accent-main);
-    color: var(--color-bg-body);
+    background: #9ED0E8;
+    color: #1B2A4A;
+    border-color: #9ED0E8;
     transform: translateY(-2px);
 }
 
@@ -124,12 +143,16 @@
     .inicio-desktop__img {
         max-width: 400px;
     }
+    .inicio-desktop__title .st-line--1 { font-size: 1.2rem; }
+    .inicio-desktop__title .st-line--2 { font-size: 2.2rem; }
+    .inicio-desktop__title .st-line--3 { font-size: 1.6rem; }
+    .inicio-desktop__title .st-line--4 { font-size: 1.4rem; }
     .inicio-desktop__title {
-        font-size: 1.3rem;
         margin-bottom: 0.6rem;
     }
     .inicio-desktop__kicker {
         font-size: 0.6rem;
+        letter-spacing: 3px;
         margin-bottom: 0.4rem;
     }
     .inicio-desktop__desc {
@@ -328,13 +351,15 @@
 
 .nav__logo {
     color: var(--color-text-primary);
-    font-size: 1.9rem;
+    font-size: 1.62rem;
     margin-left: initial;
-    font-weight: 300;
+    font-weight: 760;
     text-decoration: none;
-    font-family: var(--second-font);
+    font-family: "Montserrat", sans-serif;
     flex-shrink: 0;
-    letter-spacing: 0.15em;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    font-stretch: expanded;
 }
 
 /*=============== NAV TOGGLE (boton animado movil) ===============*/
@@ -417,17 +442,19 @@
 .nav-links__item {
     color: var(--color-text-primary);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
     font-weight: 500;
-    letter-spacing: 0.3px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     padding: 0.4rem 0.9rem;
     border-radius: 2px;
     transition: background 0.3s ease, color 0.3s ease;
     white-space: nowrap;
 }
 .nav-links__item:hover {
-    background: rgba(126, 207, 234, 0.12);
-    color: var(--color-accent-main);
+    background: rgba(123, 184, 212, 0.12);
+    color: var(--color-hover-cta, #9ED0E8);
 }
 
 /* Navbar fondo solido */
@@ -573,8 +600,8 @@
     align-items: center;
     justify-content: center;
     padding: 0.75rem;
-    padding-top: 5.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 6.3rem;
+    padding-bottom: 0.5rem;
     background-color: var(--color-bg-body);
 }
 
@@ -599,6 +626,21 @@
 }
 
 /*=============== PANEL INICIO (legacy — eliminado) ===============*/
+
+/*=============== SHOWCASE TEXTO — móvil centrado y compacto ===============*/
+@media (max-width: 1023px) and (orientation: portrait) {
+    #menu-showcase {
+        min-height: auto;
+    }
+    .showcase-texto {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    /* Titulo con mas presencia en movil */
+    .showcase-titulo span {
+        letter-spacing: 0 !important;
+    }
+}
 
 /*=============== LANDSCAPE MOVIL — optimizacion general ===============*/
 @media (max-width: 1023px) and (orientation: landscape) {
@@ -644,9 +686,9 @@
 /* For small devices */
 @media (max-width: 480px) {
     .nav__logo {
-        font-size: 1.6rem;
-        letter-spacing: 0.1em;
-        font-weight: 500;
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        font-weight: 800;
     }
 }
 
@@ -667,11 +709,18 @@
     text-align: center;
 }
 .gallery-header h2 {
-    font-family: var(--second-font);
-    font-size: clamp(1.6rem, 4vw, 3rem);
-    color: var(--color-accent-main);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 0.92;
     margin-bottom: 0.5rem;
 }
+.gallery-header h2 .st-line {
+    display: block;
+    text-transform: uppercase;
+    line-height: 0.92;
+}
+.gallery-header h2 .st-line--accent { color: #7BB8D4; font-size: clamp(1.32rem, 2.75vw, 2.2rem); }
+.gallery-header h2 .st-line--white  { color: #FFFFFF; font-size: clamp(2.75rem, 5.5vw, 5.5rem); letter-spacing: -1px; }
 /* Separador dorado */
 .gallery-header h2::after {
     content: '';
@@ -682,8 +731,12 @@
     margin: 0.75rem auto 0;
 }
 .gallery-header p {
-    font-size: 1.1rem;
-    color: var(--color-text-secondary);
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #A0B4C8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* Viewport que recorta la cinta */
@@ -769,11 +822,18 @@
     margin-bottom: 3rem;
 }
 .servicios-header h2 {
-    font-family: var(--second-font);
-    font-size: clamp(1.6rem, 4vw, 3rem);
-    color: var(--color-accent-main);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 0.9;
     margin-bottom: 0.5rem;
 }
+.servicios-header h2 .st-line {
+    display: block;
+    text-transform: uppercase;
+    line-height: 0.9;
+}
+.servicios-header h2 .st-line--accent { color: #7BB8D4; font-size: clamp(1.2rem, 2.5vw, 2rem); }
+.servicios-header h2 .st-line--white  { color: #FFFFFF; font-size: clamp(3rem, 6vw, 6rem); letter-spacing: -2px; }
 /* Separador dorado */
 .servicios-header h2::after {
     content: '';
@@ -784,8 +844,12 @@
     margin: 0.75rem auto 0;
 }
 .servicios-header p {
-    font-size: 1.1rem;
-    color: var(--color-text-secondary);
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #A0B4C8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .servicios-grid {
@@ -848,16 +912,20 @@
     padding: 1.25rem 1.5rem 1.5rem;
 }
 .servicio-card__body h3 {
-    font-family: var(--second-font);
-    font-size: 1.25rem;
-    color: var(--color-accent-main);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #FFFFFF;
     margin-bottom: 0.4rem;
-    text-transform: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .servicio-card__body p {
+    font-family: "Lato", sans-serif;
     font-size: 0.95rem;
-    color: var(--color-text-secondary);
-    line-height: 1.5;
+    font-weight: 300;
+    color: #A0B4C8;
+    line-height: 1.6;
 }
 
 /* --- Modal --- */
@@ -937,15 +1005,19 @@
     padding: 1.5rem 2rem 2rem;
 }
 .servicio-modal__content h3 {
-    font-family: var(--second-font);
-    font-size: 1.5rem;
-    color: var(--color-accent-main);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #FFFFFF;
     margin-bottom: 0.75rem;
-    text-transform: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .servicio-modal__content p {
+    font-family: "Lato", sans-serif;
     font-size: 1rem;
-    color: var(--color-text-secondary);
+    font-weight: 300;
+    color: #A0B4C8;
     line-height: 1.7;
 }
 
@@ -968,11 +1040,18 @@
     margin-bottom: 3rem;
 }
 .testimonios-header h2 {
-    font-family: var(--second-font);
-    font-size: clamp(1.6rem, 4vw, 3rem);
-    color: var(--color-accent-main);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 0.9;
     margin-bottom: 0.5rem;
 }
+.testimonios-header h2 .st-line {
+    display: block;
+    text-transform: uppercase;
+    line-height: 0.9;
+}
+.testimonios-header h2 .st-line--accent { color: #7BB8D4; font-size: clamp(1.2rem, 2.5vw, 2rem); }
+.testimonios-header h2 .st-line--white  { color: #FFFFFF; font-size: clamp(2.8rem, 5.5vw, 5.5rem); letter-spacing: -1px; }
 /* Separador dorado */
 .testimonios-header h2::after {
     content: '';
@@ -983,8 +1062,12 @@
     margin: 0.75rem auto 0;
 }
 .testimonios-header p {
-    font-size: 1.1rem;
-    color: var(--color-text-secondary);
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #A0B4C8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* --- Slider track --- */
@@ -1044,8 +1127,9 @@
 }
 
 .testimonio-card__quote {
+    font-family: "Playfair Display", serif;
     font-size: 1rem;
-    color: var(--color-text-secondary);
+    color: #A0B4C8;
     line-height: 1.7;
     margin-bottom: 1.5rem;
     font-style: italic;

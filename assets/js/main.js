@@ -241,3 +241,44 @@ document.addEventListener('DOMContentLoaded', () => {
         goTo(current);
     });
 })();
+
+/*=============== ANIMACION TITULOS APILADOS ===============*/
+(() => {
+    /* Observa el h1 del hero para animar las lineas con fade-in escalonado */
+    const heroTitle = document.querySelector('.inicio-desktop__title');
+    if (!heroTitle) return;
+
+    const lines = heroTitle.querySelectorAll('.st-line');
+    if (!lines.length) return;
+
+    /* Estado inicial: ocultas */
+    lines.forEach(line => {
+        line.style.opacity = '0';
+        line.style.transform = 'translateY(18px)';
+        line.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+
+    const obsHero = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                lines.forEach((line, i) => {
+                    setTimeout(() => {
+                        line.style.opacity = '1';
+                        line.style.transform = 'translateY(0)';
+                    }, i * 120);
+                });
+                obsHero.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    obsHero.observe(heroTitle);
+
+    /* Seguro: mostrar todo tras 3s */
+    setTimeout(() => {
+        lines.forEach(line => {
+            line.style.opacity = '1';
+            line.style.transform = 'translateY(0)';
+        });
+    }, 3000);
+})();
