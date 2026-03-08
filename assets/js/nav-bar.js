@@ -49,4 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMenu();
         }
     });
+
+    // Cerrar menú al cambiar orientación o redimensionar
+    window.addEventListener('resize', closeMenu);
 });

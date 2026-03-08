@@ -464,36 +464,21 @@
     border: 1px solid var(--glass-border);
 }
 
-/* Desktop (768px+) y landscape: links en linea, aparecen con fondo solido */
-@media (min-width: 768px), (orientation: landscape) {
+/* Desktop (768px+) y tablets landscape: links en linea */
+@media (min-width: 768px) and (orientation: portrait),
+       (min-width: 1024px),
+       (orientation: landscape) and (min-height: 501px) and (min-width: 768px) {
     .nav--solid .nav-links {
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
     }
-    /* Hamburguesa oculta en estos modos */
     .nav-toggle {
         display: none !important;
     }
 }
 
-/* Landscape celulares: navbar compacto y links ajustados */
-@media (orientation: landscape) and (max-height: 500px) {
-    #navbar {
-        height: 2.75rem !important;
-        top: 0.25rem !important;
-        padding-left: max(0.75rem, env(safe-area-inset-left)) !important;
-        padding-right: max(0.75rem, env(safe-area-inset-right)) !important;
-    }
-    .nav__logo {
-        font-size: 1.2rem !important;
-    }
-    .nav-links__item {
-        font-size: 0.7rem;
-        padding: 0.25rem 0.5rem;
-    }
-}
-/* Landscape algo mas grande (tablets pequenas) */
+/* Tablets landscape: links ajustados */
 @media (orientation: landscape) and (min-height: 501px) and (max-width: 1023px) {
     .nav-links__item {
         font-size: 0.8rem;
@@ -501,14 +486,16 @@
     }
 }
 
-/* ---- Movil portrait: menu desplegable ---- */
-@media (max-width: 767px) and (orientation: portrait) {
+/* ---- Movil (portrait + landscape celular): menu hamburguesa ---- */
+@media (max-width: 767px),
+       (orientation: landscape) and (max-height: 500px) {
     #navbar {
         position: fixed;
+        justify-content: center !important;
     }
 
     .nav-toggle {
-        display: flex;
+        display: flex !important;
         position: absolute;
         right: 1rem;
         top: 0;
@@ -523,7 +510,7 @@
         pointer-events: auto;
     }
 
-    /* Links ocultos por defecto */
+    /* Links como menu desplegable */
     .nav-links {
         position: absolute;
         top: calc(100% + 0.5rem);
@@ -546,7 +533,6 @@
                     transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* SOLO visible al hacer clic en hamburguesa + navbar solido */
     .nav--solid .nav-links.is-open {
         opacity: 1;
         transform: translateX(-50%) translateY(0);
@@ -575,16 +561,27 @@
         transform: scale(0.98);
     }
 
-    /* Separador sutil entre items */
     .nav-links li + li .nav-links__item {
         border-top: 1px solid rgba(240, 244, 248, 0.06);
     }
 }
 
-/* Landscape movil: navbar con layout de desktop */
-@media (max-width: 767px) and (orientation: landscape) {
+/* Landscape celular: navbar mas compacto */
+@media (orientation: landscape) and (max-height: 500px) {
     #navbar {
-        justify-content: space-between !important;
+        height: 2.75rem !important;
+        top: 0.25rem !important;
+        padding-left: max(0.75rem, env(safe-area-inset-left)) !important;
+        padding-right: max(0.75rem, env(safe-area-inset-right)) !important;
+    }
+    .nav__logo {
+        font-size: 1.1rem !important;
+        letter-spacing: 5px !important;
+    }
+    /* Menu desplegable mas compacto */
+    .nav-links__item {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -642,7 +639,118 @@
     }
 }
 
-/*=============== LANDSCAPE MOVIL — optimizacion general ===============*/
+/*=============== LANDSCAPE — optimizacion completa ===============*/
+
+/* ---- Celulares landscape (altura corta, <500px) ---- */
+@media (max-width: 1023px) and (orientation: landscape) and (max-height: 500px) {
+
+    /* Hero: texto mas compacto, imagen mas pequeña */
+    .inicio-desktop {
+        padding: 3rem 1.5rem 1.5rem 3.5rem;
+        gap: 1rem;
+        min-height: calc(100dvh - 1rem);
+    }
+    .inicio-desktop__texto {
+        flex: 0 1 280px;
+        margin-top: 0;
+    }
+    .inicio-desktop__title .st-line--1 { font-size: 0.9rem; }
+    .inicio-desktop__title .st-line--2 { font-size: 1.6rem; }
+    .inicio-desktop__title .st-line--3 { font-size: 1.1rem; }
+    .inicio-desktop__title .st-line--4 { font-size: 1rem; }
+    .inicio-desktop__title { margin-bottom: 0.4rem; }
+    .inicio-desktop__kicker { font-size: 0.5rem; margin-bottom: 0.25rem; letter-spacing: 2px; }
+    .inicio-desktop__desc { font-size: 0.7rem; line-height: 1.4; margin-bottom: 0.3rem; }
+    .inicio-desktop__desc:last-of-type { margin-bottom: 0.6rem; }
+    .inicio-desktop__cta { padding: 0.4rem 1.2rem; font-size: 0.65rem; }
+    .inicio-desktop__img img {
+        height: calc(100dvh - 4rem);
+    }
+
+    /* Showcase: texto + circulos lado a lado, compacto */
+    #menu-showcase {
+        min-height: auto !important;
+    }
+    .showcase-texto {
+        padding: 1.5rem 1rem !important;
+        margin-top: 0 !important;
+        text-align: left !important;
+    }
+
+    /* Circulos mas pequeños */
+    .circle-static {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    /* Galeria */
+    #pinterest-gallery { padding: 2rem 0; }
+    .gallery-col { width: 180px; height: 280px; }
+
+    /* Servicios: grid 2 columnas */
+    #servicios, #testimonios { padding: 2.5rem 1rem; }
+    .servicios-header, .testimonios-header { margin-bottom: 1.5rem; }
+    .servicios-grid { gap: 1rem; }
+    .servicio-card__body { padding: 0.75rem 1rem 1rem; }
+    .servicio-card__body h3 { font-size: 1.3rem; }
+    .servicio-card__body p { font-size: 0.8rem; }
+
+    /* Testimonios */
+    .testimonio-card { padding: 1.5rem 1.25rem; }
+    .testimonio-card__quote { font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem; }
+}
+
+/* ---- Tablets landscape (iPad, altura media 501px-900px) ---- */
+@media (max-width: 1023px) and (orientation: landscape) and (min-height: 501px) {
+
+    /* Hero */
+    .inicio-desktop {
+        padding: 4rem 2rem 2rem 4rem;
+        gap: 2rem;
+    }
+    .inicio-desktop__texto {
+        flex: 0 1 350px;
+        margin-top: 0;
+    }
+    .inicio-desktop__title .st-line--1 { font-size: 1.4rem; }
+    .inicio-desktop__title .st-line--2 { font-size: 2.6rem; }
+    .inicio-desktop__title .st-line--3 { font-size: 1.8rem; }
+    .inicio-desktop__title .st-line--4 { font-size: 1.6rem; }
+    .inicio-desktop__title { margin-bottom: 0.6rem; }
+    .inicio-desktop__desc { font-size: 0.82rem; }
+    .inicio-desktop__img { max-width: 450px; }
+
+    /* Showcase */
+    #menu-showcase {
+        min-height: auto !important;
+    }
+    .showcase-texto {
+        padding: 2rem 1.5rem !important;
+        margin-top: 0 !important;
+    }
+
+    /* Circulos */
+    .circle-static {
+        width: 320px !important;
+        height: 320px !important;
+    }
+
+    /* Galeria */
+    .gallery-col { width: 220px; height: 420px; }
+
+    /* Servicios: grid 3 columnas */
+    #servicios, #testimonios { padding: 3rem 1.5rem; }
+    .servicios-header, .testimonios-header { margin-bottom: 2rem; }
+    .servicios-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+    }
+
+    /* Testimonios: 2 tarjetas visibles */
+    .testimonio-card { padding: 2rem 1.5rem; }
+}
+
+/* ---- Reglas compartidas landscape (ambos tamaños) ---- */
 @media (max-width: 1023px) and (orientation: landscape) {
     #servicios,
     #testimonios {
@@ -653,8 +761,17 @@
     .testimonios-header {
         margin-bottom: 2rem;
     }
-    #menu-showcase {
-        min-height: auto !important;
+
+    /* Titulos de seccion mas compactos en landscape */
+    .servicios-header h2 .st-line--white,
+    .testimonios-header h2 .st-line--white,
+    .gallery-header h2 .st-line--white {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+    .servicios-header h2 .st-line--accent,
+    .testimonios-header h2 .st-line--accent,
+    .gallery-header h2 .st-line--accent {
+        font-size: clamp(1rem, 2vw, 1.5rem);
     }
 }
 
