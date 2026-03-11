@@ -1,12 +1,35 @@
     /* (Menú lateral eliminado — reemplazado por barra social fija) */
 
-/*=============== CHROME FIX: forzar decodificación de imágenes ===============*/
+/*=============== IMAGE RECOVERY: reintentar imágenes que fallan ===============*/
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.gallery-card img, .servicio-card__img img').forEach(img => {
-        if (!img.complete || img.naturalWidth === 0) {
-            const src = img.src;
-            img.src = '';
-            img.src = src;
+    const MAX_RETRIES = 2;
+    const RETRY_DELAY = 1500;
+
+    function retryImage(img, attempt) {
+        if (attempt >= MAX_RETRIES) return;
+        const originalSrc = img.dataset.originalSrc || img.getAttribute('src');
+        if (!originalSrc) return;
+
+        setTimeout(() => {
+            const sep = originalSrc.includes('?') ? '&' : '?';
+            img.src = originalSrc + sep + '_r=' + Date.now();
+        }, RETRY_DELAY * (attempt + 1));
+    }
+
+    document.querySelectorAll('img').forEach(img => {
+        img.dataset.originalSrc = img.getAttribute('src');
+
+        img.addEventListener('error', function handler() {
+            const attempt = parseInt(img.dataset.retryCount || '0', 10);
+            img.dataset.retryCount = attempt + 1;
+            if (attempt < MAX_RETRIES) {
+                retryImage(img, attempt);
+            }
+        });
+
+        // Si la imagen ya cargó pero está rota (0×0), reintentar
+        if (img.complete && img.naturalWidth === 0 && img.src) {
+            retryImage(img, 0);
         }
     });
 });

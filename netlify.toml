@@ -19,23 +19,30 @@
   [headers.values]
     Cache-Control = "no-cache"
 
-# Imágenes: caché largo (no cambian)
+# Imágenes: caché de 30 días + revalidación suave
+# NO usar immutable — permite al navegador revalidar si algo cambió
+# stale-while-revalidate: sirve la cacheada mientras busca la nueva en background
 [[headers]]
   for = "/assets/img/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/assets/img/**/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/imagenes-terapia/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
 [[headers]]
   for = "/pictures/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
 
-# CSS y JS: caché corto (cambian con cada deploy)
+# CSS y JS: siempre revalidar (cambian con cada deploy)
 [[headers]]
   for = "/assets/css/*"
   [headers.values]
@@ -45,8 +52,3 @@
   for = "/assets/js/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
