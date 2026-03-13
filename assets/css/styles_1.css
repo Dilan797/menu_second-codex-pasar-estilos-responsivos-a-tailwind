@@ -1,6 +1,6 @@
-/*=============== CIRCULOS ESTATICOS — 1 imagen por circulo ===============*/
+/*=============== TARJETAS DE RESULTADOS — rectangulares ===============*/
 .circle-static {
-    border-radius: 9999px;
+    border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
@@ -677,10 +677,10 @@
         text-align: left !important;
     }
 
-    /* Circulos mas pequeños */
+    /* Tarjetas de resultados */
     .circle-static {
-        width: 200px !important;
-        height: 200px !important;
+        width: 208px !important;
+        height: auto !important;
     }
 
     /* Galeria */
@@ -729,10 +729,10 @@
         margin-top: 0 !important;
     }
 
-    /* Circulos */
+    /* Tarjetas de resultados */
     .circle-static {
-        width: 320px !important;
-        height: 320px !important;
+        width: 288px !important;
+        height: auto !important;
     }
 
     /* Galeria */
@@ -1309,5 +1309,229 @@
 @media (min-width: 1024px) {
     .testimonios-dots {
         display: none;
+    }
+}
+
+/*=============== RESULTADOS — Antes y Después ===============*/
+.resultados-section {
+    background: linear-gradient(180deg, transparent 0%, #0d0d0d 6%, #0d0d0d 94%, transparent 100%);
+    padding: 5rem 1.5rem;
+}
+
+.resultados-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.resultados-kicker {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #7BB8D4;
+    margin-bottom: 0.75rem;
+}
+.resultados-header h2 {
+    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 0.92;
+    margin-bottom: 0.5rem;
+}
+.resultados-header h2 .st-line {
+    display: block;
+    text-transform: uppercase;
+    line-height: 0.92;
+}
+.resultados-header h2 .st-line--accent { color: #7BB8D4; font-size: clamp(1.2rem, 2.5vw, 2rem); }
+.resultados-header h2 .st-line--white  { color: #FFFFFF; font-size: clamp(3rem, 6vw, 6rem); letter-spacing: -2px; }
+.resultados-separator {
+    width: 60px;
+    height: 2px;
+    background: #c9a96e;
+    margin: 0.75rem auto 0.75rem;
+}
+.resultados-sub {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #A0B4C8;
+    letter-spacing: 1px;
+}
+
+/* --- Grid de sliders --- */
+.resultados-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media (min-width: 640px) {
+    .resultados-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+@media (min-width: 1024px) {
+    .resultados-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* --- Comparison Slider --- */
+.comparison-slider {
+    position: relative;
+}
+
+.comparison-slider__wrapper {
+    position: relative;
+    aspect-ratio: 3 / 3.4;
+    overflow: hidden;
+    border-radius: 14px;
+    cursor: ew-resize;
+    user-select: none;
+    -webkit-user-select: none;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    /* Nitidez mejorada */
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.comparison-slider__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    /* Zoom ligero para recortar bordes oscuros de las fotos */
+    transform: scale(1.06);
+    /* Mejora de nitidez */
+    image-rendering: -webkit-optimize-contrast;
+    filter: contrast(1.03) saturate(1.05);
+}
+
+.comparison-slider__img--after {
+    position: absolute;
+    inset: 0;
+}
+
+.comparison-slider__before {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 50% 0 0);
+    z-index: 2;
+}
+
+.comparison-slider__before img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Labels --- */
+.comparison-slider__label {
+    position: absolute;
+    top: 0.75rem;
+    z-index: 5;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f5f0eb;
+    padding: 0.3rem 0.65rem;
+    border-radius: 3px;
+    background: rgba(13, 13, 13, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.comparison-slider.is-ready .comparison-slider__label {
+    opacity: 1;
+}
+.comparison-slider__label--before {
+    left: 0.75rem;
+}
+.comparison-slider__label--after {
+    right: 0.75rem;
+}
+
+/* --- Handle (barra + circulo) --- */
+.comparison-slider__handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 3px;
+    cursor: ew-resize;
+    touch-action: none;
+}
+
+.comparison-slider__handle-line {
+    flex: 1;
+    width: 2px;
+    background: #c9a96e;
+    box-shadow: 0 0 6px rgba(201, 169, 110, 0.4);
+}
+
+.comparison-slider__handle-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(13, 13, 13, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 2px solid #c9a96e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9a96e;
+    flex-shrink: 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comparison-slider__wrapper.is-dragging .comparison-slider__handle-circle,
+.comparison-slider__handle-circle:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 16px rgba(201, 169, 110, 0.5);
+}
+
+/* --- Responsive landscape celular --- */
+@media (max-width: 1023px) and (orientation: landscape) and (max-height: 500px) {
+    .resultados-section { padding: 2.5rem 1rem; }
+    .resultados-header { margin-bottom: 1.5rem; }
+    .resultados-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    .comparison-slider__handle-circle {
+        width: 32px;
+        height: 32px;
+    }
+    .comparison-slider__handle-circle svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* --- Tablets landscape --- */
+@media (max-width: 1023px) and (orientation: landscape) and (min-height: 501px) {
+    .resultados-section { padding: 3rem 1.5rem; }
+    .resultados-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
     }
 }
