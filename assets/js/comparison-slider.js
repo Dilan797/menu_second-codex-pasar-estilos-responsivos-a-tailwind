@@ -8,10 +8,17 @@
     var handle  = slider.querySelector('.comparison-slider__handle');
     var isDragging = false;
 
+    var labelBefore = slider.querySelector('.comparison-slider__label--before');
+    var labelAfter  = slider.querySelector('.comparison-slider__label--after');
+
     function setPosition(pct) {
       pct = Math.max(0, Math.min(100, pct));
       before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
       handle.style.left = pct + '%';
+
+      /* Ocultar etiquetas cuando el slider llega al extremo */
+      if (labelBefore) labelBefore.style.opacity = pct < 5 ? '0' : '1';
+      if (labelAfter)  labelAfter.style.opacity  = pct > 95 ? '0' : '1';
     }
 
     function getPercent(clientX) {
