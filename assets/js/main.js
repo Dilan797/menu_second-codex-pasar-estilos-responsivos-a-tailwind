@@ -51,34 +51,34 @@ document.addEventListener('DOMContentLoaded', () => {
 (() => {
     const serviciosData = [
         {
-            titulo: 'Hipopresivos Básico',
-            desc: 'Programa de iniciación donde aprendes las posturas fundamentales, la técnica de aspiración diafragmática (apnea espiratoria) y la correcta activación de la faja abdominal. Ideal si nunca has practicado hipopresivos. Trabajamos la conciencia corporal, la alineación postural y la respiración costal antes de avanzar a secuencias más complejas. Sesiones de 45 minutos en grupos reducidos.',
-            img: 'assets/img/servicios/basico.jpg'
+            titulo: 'M-Sculp',
+            desc: 'Energía electromagnética de alta intensidad (HIFEM) que genera contracciones supramáximales para esculpir, tonificar y levantar glúteos. Aprobado por FDA. Trabaja glúteos, abdomen, muslos, brazos y pantorrillas. Resultados visibles desde las primeras sesiones sin dolor ni tiempo de recuperación.',
+            img: 'assets/img/terapias/MSCULP.jpg'
         },
         {
-            titulo: 'Hipopresivos Avanzado',
-            desc: 'Para quienes ya dominan la técnica básica. Incluye secuencias dinámicas en bipedestación, cuadrupedia y decúbito con transiciones fluidas. Se intensifica el trabajo de vacío abdominal, se incorporan variantes con brazos en chandelier y crown, y se aumenta el tiempo de apnea. Mejora visible en reducción de perímetro de cintura, tono del core profundo y postura global. Sesiones de 60 minutos.',
-            img: 'assets/img/servicios/avanzado.jpg'
+            titulo: 'Tensamax',
+            desc: 'Radiofrecuencia monopolar capacitiva y resistiva. Reafirma la piel, reduce grasa localizada, elimina celulitis y estimula la producción de colágeno y elastina. Ideal para rostro, cuello, abdomen, brazos y piernas. Tratamiento indoloro con resultados progresivos y duraderos.',
+            img: 'assets/img/terapias/TENSAMAX.jpg'
         },
         {
-            titulo: 'Recuperación Postparto',
-            desc: 'Programa especializado para madres recientes (a partir de 6-8 semanas postparto o tras alta médica). Abordamos la diástasis abdominal, la recuperación del suelo pélvico y la reconexión con la musculatura profunda. El protocolo incluye valoración inicial, progresión individualizada y seguimiento con mediciones de diástasis. Complementamos con ejercicios de movilidad y fortalecimiento suave.',
-            img: 'assets/img/servicios/postparto.jpg'
+            titulo: 'Exilis Ultra 360',
+            desc: 'Tecnología BTL que combina radiofrecuencia y ultrasonido para rejuvenecer la piel y reducir grasa de forma no invasiva e indolora. Actúa en rostro, papada, abdomen, flancos y muslos. Protocolo clínicamente probado que ofrece resultados desde la primera sesión.',
+            img: 'assets/img/terapias/EXILIS.jpg'
         },
         {
-            titulo: 'Terapia de Suelo Pélvico',
-            desc: 'Rehabilitación integral del suelo pélvico para tratar y prevenir incontinencia urinaria, prolapsos leves, dolor pélvico crónico e hipertonía. Combinamos hipopresivos con ejercicios específicos de conciencia perineal, técnicas manuales y electroestimulación cuando es necesario. Cada plan es 100% individualizado tras una valoración funcional completa.',
-            img: 'assets/img/servicios/suelo-pelvico.jpg'
+            titulo: 'Gimnasia Pasiva',
+            desc: 'Electroestimulación muscular que tonifica, mejora la circulación sanguínea y alivia dolores musculares sin esfuerzo físico. Perfecta para abdomen, glúteos, piernas y brazos. Complemento ideal para potenciar los resultados de otros tratamientos corporales.',
+            img: 'assets/img/terapias/GIMNASIA-PASIVA.jpg'
         },
         {
-            titulo: 'Hipopresivos & Pilates',
-            desc: 'Lo mejor de ambas disciplinas en una sola sesión. Fusionamos la técnica hipopresiva (vacío abdominal, reprogramación postural) con los principios de Pilates (control, precisión, fluidez). El resultado: un core fuerte sin presión intraabdominal, mayor flexibilidad, mejor alineación y una silueta más estilizada. Ideal para deportistas y personas activas. Sesiones de 60 minutos.',
-            img: 'assets/img/servicios/pilates.jpg'
+            titulo: 'Cavitación',
+            desc: 'Ondas ultrasónicas de baja frecuencia que destruyen las células de grasa localizada de forma selectiva. Sin cirugía, sin dolor, sin tiempo de recuperación. Resultados medibles en abdomen, flancos, muslos, espalda y brazos desde la primera sesión.',
+            img: 'assets/img/terapias/CAVITACION.jpg'
         },
         {
             titulo: 'Sesión Personalizada',
             desc: 'Valoración individual completa: evaluamos tu postura, respiración, estado del suelo pélvico, diástasis (si aplica) y objetivos personales. A partir de ahí diseñamos un plan de terapia a medida con frecuencia, duración y tipo de ejercicios adaptados a ti. Incluye seguimiento periódico y ajustes del programa según tu progreso. La opción ideal si tienes una condición específica o buscas resultados óptimos.',
-            img: 'assets/img/servicios/personalizada.jpg'
+            img: 'assets/img/terapias/sesion-perzonalizada.jpeg'
         }
     ];
 
@@ -305,3 +305,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, 3000);
 })();
+
