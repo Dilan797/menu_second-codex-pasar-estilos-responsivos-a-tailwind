@@ -5,7 +5,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
       <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+      <link rel="icon" href="assets/img/logo.png?v=2" type="image/png">
+      <link rel="shortcut icon" href="assets/img/logo.png?v=2" type="image/png">
+      <link rel="apple-touch-icon" href="assets/img/logo.png?v=2">
 
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
@@ -26,7 +28,7 @@
             <nav
                id="navbar"
                   class="
-                        fixed left-1/2 -translate-x-1/2
+                        fixed left-1/2 -translate-x-1/2 lg:-translate-x-[53%]
                         top-2 sm:top-4 lg:top-6
 
                         w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[75vw] xl:w-[70vw] 2xl:w-[60vw]
@@ -39,7 +41,10 @@
                         rounded-2xl transition-colors duration-300
                      "
                      >
-               <a href="#" class="nav__logo">CAROLINA SALAS</a>
+               <a href="#" class="nav__logo">
+                  <img src="assets/img/logo.png" alt="CS Logo" class="nav__logo-img">
+                  <span class="nav__logo-text">BY CAROLINA SALAS</span>
+               </a>
 
                <!-- Botón menú animado (solo móvil) -->
                <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
@@ -51,7 +56,7 @@
                <!-- Links de tratamientos -->
                <ul class="nav-links" id="nav-links">
                   <li><a href="#servicios" class="nav-links__item">Terapias</a></li>
-                  <li><a href="#menu-showcase" class="nav-links__item">Hipopresivos</a></li>
+                  <li><a href="#menu-showcase" class="nav-links__item">Resultados</a></li>
                   <li><a href="#testimonios" class="nav-links__item">Testimonios</a></li>
                   <li><a href="#contact" class="nav-links__item">Contacto</a></li>
                </ul>
