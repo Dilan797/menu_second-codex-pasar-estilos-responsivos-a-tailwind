@@ -52,32 +52,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const serviciosData = [
         {
             titulo: 'M-Sculp',
-            desc: 'Energía electromagnética de alta intensidad (HIFEM) que genera contracciones supramáximales para esculpir, tonificar y levantar glúteos. Aprobado por FDA. Trabaja glúteos, abdomen, muslos, brazos y pantorrillas. Resultados visibles desde las primeras sesiones sin dolor ni tiempo de recuperación.',
+            desc: 'Tecnología HIFEM (High-Intensity Focused Electromagnetic) que genera más de 20.000 contracciones supramáximales por sesión, activando el 100% de las fibras musculares — algo imposible mediante el ejercicio voluntario. Esculpe, tonifica y fortalece glúteos, abdomen, muslos, brazos y pantorrillas. Estudios clínicos demuestran un aumento del 25% en masa muscular y una reducción del 30% en grasa tras un ciclo de 4 sesiones de 30 minutos. Sin dolor, sin anestesia y sin tiempo de recuperación. Protocolo aprobado por la FDA con una tasa de satisfacción del 96%.',
             img: 'assets/img/terapias/MSCULP.jpg'
         },
         {
             titulo: 'Tensamax',
-            desc: 'Radiofrecuencia monopolar capacitiva y resistiva. Reafirma la piel, reduce grasa localizada, elimina celulitis y estimula la producción de colágeno y elastina. Ideal para rostro, cuello, abdomen, brazos y piernas. Tratamiento indoloro con resultados progresivos y duraderos.',
+            desc: 'Sistema de radiofrecuencia monopolar capacitiva y resistiva que genera un efecto térmico profundo en los tejidos. Eleva la temperatura interna estimulando la producción natural de colágeno y elastina, los dos pilares de la firmeza cutánea. Reafirma la piel, reduce celulitis, grasa visceral y fibrosis, redefine contornos corporales y mejora la textura de estrías y cicatrices recientes. Aplicable en rostro, cuello, abdomen, brazos y piernas. Resultados visibles a partir de la 4ta sesión, sin molestias ni tiempo de recuperación.',
             img: 'assets/img/terapias/TENSAMAX.jpg'
         },
         {
             titulo: 'Exilis Ultra 360',
-            desc: 'Tecnología BTL que combina radiofrecuencia y ultrasonido para rejuvenecer la piel y reducir grasa de forma no invasiva e indolora. Actúa en rostro, papada, abdomen, flancos y muslos. Protocolo clínicamente probado que ofrece resultados desde la primera sesión.',
+            desc: 'Equipo de última generación de BTL que combina por primera vez radiofrecuencia monopolar con ultrasonido focalizado en un solo dispositivo. Esta doble acción permite reducir depósitos de grasa localizada, estimular la producción de colágeno, combatir la flacidez y suavizar líneas de expresión. Aprobado por la FDA, actúa en rostro, cuello, papada, abdomen, flancos, muslos y áreas íntimas. Tratamiento completamente no invasivo con resultados visibles desde la primera sesión que mejoran progresivamente durante las semanas siguientes.',
             img: 'assets/img/terapias/EXILIS.jpg'
         },
         {
             titulo: 'Gimnasia Pasiva',
-            desc: 'Electroestimulación muscular que tonifica, mejora la circulación sanguínea y alivia dolores musculares sin esfuerzo físico. Perfecta para abdomen, glúteos, piernas y brazos. Complemento ideal para potenciar los resultados de otros tratamientos corporales.',
+            desc: 'Electroestimulación muscular (EMS) que reproduce las señales eléctricas del sistema nervioso para activar la contracción muscular sin esfuerzo físico. Tonifica y define la musculatura, mejora la circulación sanguínea y linfática, combate la flacidez y alivia dolores musculares y la sensación de piernas pesadas. Ideal para abdomen, glúteos, piernas y brazos. Sesiones de 30 a 45 minutos que complementan y potencian los resultados de otros tratamientos corporales. Perfecta para quienes buscan resultados sin impacto articular.',
             img: 'assets/img/terapias/GIMNASIA-PASIVA.jpg'
         },
         {
             titulo: 'Cavitación',
-            desc: 'Ondas ultrasónicas de baja frecuencia que destruyen las células de grasa localizada de forma selectiva. Sin cirugía, sin dolor, sin tiempo de recuperación. Resultados medibles en abdomen, flancos, muslos, espalda y brazos desde la primera sesión.',
+            desc: 'Lipocavitación ultrasónica de baja frecuencia que genera microburbujas dentro del tejido adiposo. Al implosionar, estas burbujas rompen selectivamente las membranas de las células grasas (adipocitos), liberando los triglicéridos que el cuerpo elimina de forma natural a través del sistema linfático y urinario. Alternativa segura y no invasiva a la liposucción, sin anestesia ni tiempo de recuperación. Eficaz en abdomen, flancos, muslos, espalda y brazos. Sesiones de 40 minutos con resultados medibles desde la primera aplicación.',
             img: 'assets/img/terapias/CAVITACION.jpg'
         },
         {
             titulo: 'Sesión Personalizada',
-            desc: 'Valoración individual completa: evaluamos tu postura, respiración, estado del suelo pélvico, diástasis (si aplica) y objetivos personales. A partir de ahí diseñamos un plan de terapia a medida con frecuencia, duración y tipo de ejercicios adaptados a ti. Incluye seguimiento periódico y ajustes del programa según tu progreso. La opción ideal si tienes una condición específica o buscas resultados óptimos.',
+            desc: 'Valoración integral donde evaluamos tu postura, patrón respiratorio, estado del suelo pélvico, posible diástasis abdominal y tus objetivos específicos. A partir de este diagnóstico, diseñamos un plan terapéutico completamente a medida con técnicas hipopresivas adaptadas a tu etapa: recuperación postparto (desde 6-8 semanas en parto vaginal o 10-12 semanas post-cesárea), fortalecimiento del core profundo, rehabilitación del suelo pélvico o mejora postural. Incluye seguimiento periódico y ajustes progresivos del programa. Los hipopresivos además estimulan la producción de serotonina y dopamina, contribuyendo al bienestar emocional.',
             img: 'assets/img/terapias/sesion-perzonalizada.jpeg'
         }
     ];
