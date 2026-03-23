@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('navbar');
     const toggle = document.getElementById('nav-toggle');
     const navLinks = document.getElementById('nav-links');
+    const backdrop = document.getElementById('nav-backdrop');
 
     setTransparent();
 
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.remove('is-open');
         toggle.classList.remove('is-active');
         toggle.setAttribute('aria-expanded', 'false');
+        if (backdrop) backdrop.classList.remove('is-visible');
     }
 
     toggle.addEventListener('click', () => {
@@ -36,7 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('is-open');
         toggle.classList.toggle('is-active');
         toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        if (backdrop) backdrop.classList.toggle('is-visible', willOpen);
     });
+
+    // Cerrar menú al hacer clic en el backdrop
+    if (backdrop) {
+        backdrop.addEventListener('click', closeMenu);
+    }
 
     // Cerrar menú al hacer clic en un link
     navLinks.querySelectorAll('.nav-links__item').forEach(link => {

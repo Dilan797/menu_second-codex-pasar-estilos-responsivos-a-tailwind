@@ -28,11 +28,11 @@
             <nav
                id="navbar"
                   class="
-                        fixed left-1/2 -translate-x-1/2 lg:-translate-x-[53%]
+                        fixed left-1/2 -translate-x-1/2 z-[200]
                         top-2 sm:top-4 lg:top-6
 
-                        w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[75vw] xl:w-[70vw] 2xl:w-[60vw]
-                        max-w-[1200px]
+                        w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-auto
+                        max-w-[1200px] lg:max-w-none
 
                         h-14 sm:h-16 md:h-20
                         px-4 sm:px-6 md:px-8
@@ -61,6 +61,7 @@
                   <li><a href="#contact" class="nav-links__item">Contacto</a></li>
                </ul>
             </nav>
+            <div class="nav-backdrop" id="nav-backdrop"></div>
          </header>
          <div class="container_1">
             <!-- ==================== BARRA SOCIAL FIJA ==================== -->
@@ -76,33 +77,24 @@
                   <i class="ri-whatsapp-line"></i>
                </a>
             </aside>
-            <!--==================== HERO CAROLINA (solo móvil portrait) ==================== -->
-            <section class="hero-carolina" id="home">
-               <img src="assets/img/carolina-salas.jpg" alt="Carolina Salas — Especialista en hipopresivos" class="hero-carolina__img" decoding="async">
+            <!--==================== HERO MÓVIL — video fondo + foto ====================-->
+            <section class="hero-full" id="home">
+               <video class="hero-full__video" autoplay muted loop playsinline>
+                  <source src="video_de_fondo_inicial.mp4" type="video/mp4">
+               </video>
+               <div class="hero-full__overlay"></div>
+               <div class="hero-full__front">
+                  <img src="assets/img/carolina-salas.jpg" alt="Carolina Salas — Especialista en hipopresivos" class="hero-full__bg" decoding="async">
+                  <a href="#servicios" class="hero-full__cta">Descubre nuestras terapias</a>
+               </div>
             </section>
 
-            <!--==================== INICIO DESKTOP — texto izq + imagen der ====================-->
-            <section class="inicio-desktop" id="home-desktop">
-               <div class="inicio-desktop__texto">
-                  <p class="inicio-desktop__kicker">Terapias de Hipopresivos</p>
-                  <h1 class="inicio-desktop__title">
-                     <span class="st-line st-line--1">Tu</span>
-                     <span class="st-line st-line--2">Bienestar</span>
-                     <span class="st-line st-line--3">Comienza</span>
-                     <span class="st-line st-line--4">Desde Adentro</span>
-                  </h1>
-                  <p class="inicio-desktop__desc">
-                     Técnicas posturales y respiratorias que fortalecen tu core profundo,
-                     rehabilitan el suelo pélvico y transforman tu cuerpo de forma segura y natural.
-                  </p>
-                  <p class="inicio-desktop__desc">
-                     Sesiones personalizadas, recuperación postparto y programas grupales
-                     adaptados a cada etapa de tu vida.
-                  </p>
-                  <a href="#servicios" class="inicio-desktop__cta">Descubre nuestras terapias</a>
-               </div>
-               <div class="inicio-desktop__img">
-                  <img src="assets/img/carolina-salas.jpg" alt="Carolina Salas — Especialista en hipopresivos" decoding="async">
+            <!--==================== HERO DESKTOP — foto_inicial fullscreen ====================-->
+            <section class="hero-desktop" id="home-desktop">
+               <img src="foto_inicial.png" alt="Carolina Salas — Especialista en hipopresivos" class="hero-desktop__bg" decoding="async">
+               <div class="hero-desktop__overlay"></div>
+               <div class="hero-desktop__content">
+                  <a href="#servicios" class="hero-desktop__cta">Descubre nuestras terapias</a>
                </div>
             </section>
 
