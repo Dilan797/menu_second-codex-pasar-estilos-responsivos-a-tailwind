@@ -1537,6 +1537,20 @@
     height: 100%;
     border: none;
 }
+/* Instagram official embeds */
+.video-card__embed .instagram-media {
+    margin: 0 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+.video-card__embed .instagram-media iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
 
 /* Badge de red social */
 .video-card__badge {
