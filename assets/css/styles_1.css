@@ -1146,8 +1146,11 @@
     transform: scale(1.06);
 }
 
-/* Columna ancha para lateral */
-.gallery-col--wide { width: 299px; height: 425px; } /* +15% ancho, -15% alto */
+/* Columna ancha para lateral + foto lugar */
+.gallery-col--wide { width: 299px; height: 500px; }
+
+/* Lateral: mostrar 20% más a la izquierda y recortar 20% de abajo */
+.img-lateral { object-position: 20% 0%; }
 
 /* -- Responsive -- */
 @media (max-width: 640px) {
@@ -1155,13 +1158,13 @@
     .gallery-scroll { overflow: hidden; }
     .gallery-belt { gap: 10px; animation-duration: 35s; }
     .gallery-col  { width: 160px; height: 320px; gap: 10px; }
-    .gallery-col--wide { width: 184px; height: 272px; }
+    .gallery-col--wide { width: 184px; height: 320px; }
     .gallery-card { border-radius: 4px; min-height: 0; }
     .gallery-card img { flex: 1; min-height: 0; width: 100%; object-fit: cover; }
 }
 @media (min-width: 641px) and (max-width: 1024px) {
     .gallery-col  { width: 210px; height: 410px; }
-    .gallery-col--wide { width: 242px; height: 349px; }
+    .gallery-col--wide { width: 242px; height: 410px; }
 }
 
 /*=============== SERVICIOS ===============*/
