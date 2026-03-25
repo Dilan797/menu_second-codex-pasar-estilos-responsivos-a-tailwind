@@ -17,8 +17,8 @@
 
       <!--=============== PRELOAD recursos críticos ===============-->
       <link rel="preload" href="assets/img/carolina-salas.jpg" as="image">
-      <link rel="preload" href="foto_inicial.png" as="image">
-      <link rel="preload" href="video_de_fondo_inicial.mp4" as="video" type="video/mp4">
+      <link rel="preload" href="assets/media/foto_inicial.png" as="image">
+      <link rel="preload" href="assets/media/video_de_fondo_inicial.mp4" as="video" type="video/mp4">
 
       <!--=============== CSS (después de Tailwind para ganar en cascada) ===============-->
       <link rel="stylesheet" href="assets/css/styles.css?v=46">
@@ -85,7 +85,7 @@
             <!--==================== HERO MÓVIL — video fondo + foto ====================-->
             <section class="hero-full" id="home">
                <video class="hero-full__video" autoplay muted loop playsinline>
-                  <source src="video_de_fondo_inicial.mp4" type="video/mp4">
+                  <source src="assets/media/video_de_fondo_inicial.mp4" type="video/mp4">
                </video>
                <div class="hero-full__overlay"></div>
                <div class="hero-full__front">
@@ -96,7 +96,7 @@
 
             <!--==================== HERO DESKTOP — foto_inicial fullscreen ====================-->
             <section class="hero-desktop" id="home-desktop">
-               <img src="foto_inicial.png" alt="Carolina Salas — Especialista en hipopresivos" class="hero-desktop__bg" decoding="async">
+               <img src="assets/media/foto_inicial.png" alt="Carolina Salas — Especialista en hipopresivos" class="hero-desktop__bg" decoding="async">
                <div class="hero-desktop__overlay"></div>
                <div class="hero-desktop__content">
                   <a href="#servicios" class="hero-desktop__cta">Descubre nuestras terapias</a>
@@ -124,7 +124,7 @@
                </h2>
                <div class="w-10 h-[2px] bg-[#c9a84c] mb-3 mx-auto lg:mx-0"></div>
                <p class="text-sm sm:text-sm lg:text-sm leading-[1.45] text-[#A0B4C8] max-w-[480px] font-light font-['Lato',sans-serif]
-                         mx-auto lg:mx-0 mb-3">
+                        mx-auto lg:mx-0 mb-3">
                   Marcación abdominal, reducción de grasa localizada y tonificación corporal con tecnología de última generación. Resultados visibles desde las primeras sesiones.
                </p>
                <ul class="showcase-services-list text-sm text-[#A0B4C8] font-light font-['Lato',sans-serif] max-w-[480px] mx-auto lg:mx-0 space-y-1 mb-3">
@@ -248,6 +248,15 @@
                   <div class="gallery-card gallery-card--tall"><img src="assets/img/terapias/resultado-postparto.jpg" alt="Recuperación Postparto" decoding="async"></div>
                   <div class="gallery-card gallery-card--short"><img src="assets/img/terapias/sesion-perzonalizada.jpeg" alt="Sesión Personalizada" decoding="async"></div>
                </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--xtall"><img src="assets/img/terapias/reto-printest.jpg" alt="Reto Metabólico 21" decoding="async"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--xtall"><img src="assets/img/terapias/tecnica-aron-printest.jpg" alt="Técnica Arón — By Carolina Salas" decoding="async"></div>
+               </div>
+               <div class="gallery-col gallery-col--wide">
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/terapias/lateral-printest.png" alt="Resultado Lateral" decoding="async"></div>
+               </div>
 
                <!-- Duplicado para loop infinito -->
                <div class="gallery-col">
@@ -277,6 +286,15 @@
                <div class="gallery-col">
                   <div class="gallery-card gallery-card--tall"><img src="assets/img/terapias/resultado-postparto.jpg" alt="Recuperación Postparto" loading="lazy" decoding="async"></div>
                   <div class="gallery-card gallery-card--short"><img src="assets/img/terapias/sesion-perzonalizada.jpeg" alt="Sesión Personalizada" loading="lazy" decoding="async"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--xtall"><img src="assets/img/terapias/reto-printest.jpg" alt="Reto Metabólico 21" loading="lazy" decoding="async"></div>
+               </div>
+               <div class="gallery-col">
+                  <div class="gallery-card gallery-card--xtall"><img src="assets/img/terapias/tecnica-aron-printest.jpg" alt="Técnica Arón — By Carolina Salas" loading="lazy" decoding="async"></div>
+               </div>
+               <div class="gallery-col gallery-col--wide">
+                  <div class="gallery-card gallery-card--tall"><img src="assets/img/terapias/lateral-printest.png" alt="Resultado Lateral" loading="lazy" decoding="async"></div>
                </div>
             </div>
          </div>
