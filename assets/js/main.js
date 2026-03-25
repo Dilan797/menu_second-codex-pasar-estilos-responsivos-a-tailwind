@@ -143,7 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     cards.forEach(card => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.servicio-card__wa-btn')) return;
             const idx = card.getAttribute('data-service');
             openModal(parseInt(idx, 10));
         });

@@ -922,6 +922,8 @@
     /* Showcase: texto + circulos lado a lado, compacto */
     #menu-showcase {
         min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
     .showcase-texto {
         padding: 1.5rem 1rem !important;
@@ -929,10 +931,20 @@
         text-align: left !important;
     }
 
-    /* Tarjetas de resultados */
+    /* Sliders en horizontal */
+    #menu-showcase > div:last-child {
+        flex-direction: row !important;
+        gap: 1rem !important;
+        padding: 1rem 1.5rem !important;
+        overflow-x: auto;
+        justify-content: center;
+    }
+
+    /* Tarjetas de resultados — +15% */
     .circle-static {
-        width: 208px !important;
+        width: 239px !important;
         height: auto !important;
+        flex-shrink: 0;
     }
 
     /* Galeria */
@@ -946,6 +958,7 @@
     .servicio-card__body { padding: 0.75rem 1rem 1rem; }
     .servicio-card__body h3 { font-size: 1.3rem; }
     .servicio-card__body p { font-size: 0.8rem; }
+    .servicio-card__wa-btn { font-size: 0.75rem; padding: 0.5rem 1rem; }
 
     /* Testimonios */
     .testimonio-card { padding: 1.5rem 1.25rem; }
@@ -958,16 +971,28 @@
     /* Showcase */
     #menu-showcase {
         min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
     .showcase-texto {
         padding: 2rem 1.5rem !important;
         margin-top: 0 !important;
     }
 
-    /* Tarjetas de resultados */
+    /* Sliders en horizontal */
+    #menu-showcase > div:last-child {
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+        padding: 1.5rem 2rem !important;
+        overflow-x: auto;
+        justify-content: center;
+    }
+
+    /* Tarjetas de resultados — +15% */
     .circle-static {
-        width: 288px !important;
+        width: 331px !important;
         height: auto !important;
+        flex-shrink: 0;
     }
 
     /* Galeria */
@@ -1225,6 +1250,8 @@
     cursor: pointer;
     transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     border: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
 }
 .servicio-card:hover {
     transform: translateY(-6px);
@@ -1270,6 +1297,10 @@
 
 .servicio-card__body {
     padding: 1.25rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 }
 .servicio-card__body h3 {
     font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
@@ -1287,6 +1318,47 @@
     font-weight: 300;
     color: #A0B4C8;
     line-height: 1.6;
+}
+
+/* --- Botón WhatsApp en cards de servicio --- */
+.servicio-card__wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    padding: 0.6rem 1.25rem;
+    background: #25D366;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.25);
+}
+.servicio-card__wa-btn:hover {
+    background: #1ebe5a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+}
+.servicio-card__wa-btn i {
+    font-size: 1.1rem;
+}
+
+/* --- Flecha animada swipe --- */
+.swipe-arrow {
+    display: inline-flex;
+    animation: bounceX 1.5s ease-in-out infinite;
+}
+.swipe-arrow i {
+    font-size: 1rem;
+}
+@keyframes bounceX {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(8px); }
 }
 
 /* --- Modal --- */
@@ -1558,6 +1630,43 @@
     left: 0;
     width: 100% !important;
     height: 100% !important;
+}
+
+/* --- Placeholder de video --- */
+.video-card__placeholder {
+    background: linear-gradient(160deg, rgba(30,40,55,0.95) 0%, rgba(15,20,30,0.98) 100%) !important;
+    border: 1px dashed rgba(123,184,212,0.25);
+    overflow: visible;
+}
+.video-card__placeholder .placeholder-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.video-card__placeholder i {
+    font-size: 3.5rem;
+    color: rgba(123,184,212,0.45);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.video-card:hover .video-card__placeholder i {
+    color: rgba(123,184,212,0.7);
+    transform: scale(1.1);
+}
+.video-card__placeholder span {
+    margin-top: 0.75rem;
+    font-family: "Lato", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(160,180,200,0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Badge de red social */
@@ -2244,7 +2353,7 @@
     height: 100%;
     border: none;
     display: block;
-    filter: grayscale(0.3) brightness(0.85) contrast(1.1);
+    filter: brightness(0.95) contrast(1.05);
 }
 
 /* Info cards */
