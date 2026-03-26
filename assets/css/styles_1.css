@@ -1703,6 +1703,55 @@
     border: 1px solid rgba(225,48,108,0.15);
 }
 
+/* --- Lazy embed placeholders --- */
+.lazy-embed__placeholder,
+.lazy-map__placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, rgba(30,40,55,0.95) 0%, rgba(15,20,30,0.98) 100%);
+    z-index: 3;
+    cursor: pointer;
+    transition: opacity 0.4s ease;
+}
+.lazy-embed__placeholder i,
+.lazy-map__placeholder i {
+    font-size: 3rem;
+    color: rgba(123,184,212,0.5);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.video-card:hover .lazy-embed__placeholder i {
+    color: rgba(123,184,212,0.8);
+    transform: scale(1.15);
+}
+.lazy-embed__placeholder span,
+.lazy-map__placeholder span {
+    margin-top: 0.75rem;
+    font-family: "Lato", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(160,180,200,0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.lazy-embed__spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid rgba(123,184,212,0.2);
+    border-top-color: rgba(123,184,212,0.8);
+    border-radius: 50%;
+    animation: lazyEmbedSpin 0.8s linear infinite;
+}
+@keyframes lazyEmbedSpin {
+    to { transform: rotate(360deg); }
+}
+
 /* --- Dots indicadores --- */
 .videos-dots {
     display: flex;
