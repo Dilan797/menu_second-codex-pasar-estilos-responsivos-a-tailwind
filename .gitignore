@@ -1,0 +1,16 @@
+# Dependencias (se reinstalan con npm install)
+node_modules/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Tailwind (archivo de entrada, no el output compilado)
+assets/css/tailwind-input.css
