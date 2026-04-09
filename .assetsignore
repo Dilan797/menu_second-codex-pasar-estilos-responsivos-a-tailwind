@@ -1,0 +1,11 @@
+node_modules
+package.json
+package-lock.json
+tailwind.config.js
+.gitignore
+.git
+.vscode
+README.md
+netlify.toml
+vercel.json
+assets/css/tailwind-input.css
