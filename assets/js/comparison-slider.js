@@ -71,11 +71,12 @@
     });
 
     /* --- Initial position + intro animation --- */
+    var customEnd = parseFloat(slider.getAttribute('data-end')) || 50;
     setPosition(30);
     setTimeout(function () {
       slider.classList.add('is-ready');
       var start = 30;
-      var end = 50;
+      var end = customEnd;
       var duration = 600;
       var startTime = null;
 
