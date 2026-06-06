@@ -1,15 +1,13 @@
-/*=============== TARJETAS DE RESULTADOS — rectangulares ===============*/
+/*=============== TARJETAS DE RESULTADOS — antes/después ===============*/
 .circle-static {
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-}
-
-.circle-static img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    max-width: 340px;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .circle-static {
+        max-width: none;
+    }
 }
 
 /*=============== HERO DESKTOP — foto_inicial fullscreen (solo ≥1024px) ===============*/
@@ -1021,26 +1019,187 @@
 
 /*=============== PANEL INICIO (legacy — eliminado) ===============*/
 
-/* Sección resultados: siempre encima del hero */
+/*=============== ANTES & DESPUÉS (#menu-showcase) ===============*/
 #menu-showcase {
     position: relative;
     z-index: 3;
     background-color: var(--color-bg-body, #0a1228);
+    padding: 3.5rem 1.25rem 4rem;
 }
 
-/*=============== SHOWCASE TEXTO — móvil centrado y compacto ===============*/
-@media (max-width: 1023px) and (orientation: portrait) {
+.showcase-container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* --- Encabezado --- */
+.showcase-texto {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+}
+
+.showcase-eyebrow {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #7BB8D4;
+    margin-bottom: 0.7rem;
+}
+
+.showcase-titulo {
+    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 0.9;
+    margin-bottom: 1rem;
+}
+.showcase-titulo span {
+    display: block;
+    text-transform: uppercase;
+}
+.showcase-titulo__accent {
+    color: #7BB8D4;
+    font-size: clamp(1.1rem, 3.2vw, 1.6rem);
+    letter-spacing: 0.02em;
+}
+.showcase-titulo__main {
+    color: #fff;
+    font-size: clamp(2.3rem, 7vw, 3.4rem);
+    letter-spacing: -1px;
+}
+
+.showcase-divider {
+    width: 46px;
+    height: 2px;
+    background: #c9a84c;
+    margin: 0 auto 1.15rem;
+}
+
+.showcase-desc {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #A0B4C8;
+    max-width: 580px;
+    margin: 0 auto 1.4rem;
+}
+.showcase-desc strong {
+    color: #cdd9e6;
+    font-weight: 600;
+}
+
+/* Pills de tratamientos */
+.showcase-services-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0;
+    max-width: 620px;
+    margin: 0 auto 1.5rem;
+}
+.showcase-services-list li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: #cdd9e6;
+    padding: 0.42rem 0.9rem;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.02);
+}
+.showcase-services-list li::before {
+    content: "\25C6";
+    color: #c9a84c;
+    font-size: 0.5rem;
+}
+
+.showcase-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c9a84c;
+}
+
+/* --- Tarjetas antes/después --- */
+.showcase-results {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    justify-items: center;
+}
+
+/* --- CTA --- */
+.showcase-cta-wrap {
+    text-align: center;
+    margin-top: 2.75rem;
+}
+.showcase-cta {
+    margin-top: 0;
+    padding: 0.78rem 1.7rem;
+    font-size: 0.95rem;
+}
+
+/* Tablet y pantallas grandes: 3 tarjetas en fila */
+@media (min-width: 768px) {
     #menu-showcase {
-        min-height: auto;
+        padding: 4.5rem 2rem 5rem;
     }
     .showcase-texto {
-        margin-top: -1.9rem;
-        padding-top: 0;
-        padding-bottom: 2rem;
+        margin-bottom: 3rem;
     }
-    /* Titulo con mas presencia en movil */
-    .showcase-titulo span {
-        letter-spacing: 0 !important;
+    .showcase-results {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem;
+        align-items: start;
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+}
+
+/* Escritorio: texto fijo a un lado + imágenes apiladas (efecto scroll) */
+@media (min-width: 1024px) {
+    #menu-showcase {
+        padding: 6rem 2.5rem;
+    }
+    .showcase-container {
+        display: grid;
+        grid-template-columns: minmax(320px, 0.85fr) 1.15fr;
+        gap: 3.5rem;
+        align-items: start;
+    }
+    .showcase-texto {
+        position: sticky;
+        top: 8vh;
+        text-align: left;
+        max-width: none;
+        margin: 0;
+    }
+    .showcase-divider { margin-left: 0; margin-right: auto; }
+    .showcase-desc { margin-left: 0; }
+    .showcase-services-list { justify-content: flex-start; margin-left: 0; }
+    .showcase-results {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: none;
+        margin: 0;
+    }
+    .circle-static { max-width: 460px; }
+    .showcase-cta-wrap {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
     }
 }
 
@@ -1048,34 +1207,6 @@
 
 /* ---- Celulares landscape (altura corta, <500px) ---- */
 @media (max-width: 1023px) and (orientation: landscape) and (max-height: 500px) {
-
-    /* Showcase: texto + circulos lado a lado, compacto */
-    #menu-showcase {
-        min-height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .showcase-texto {
-        padding: 1.5rem 1rem !important;
-        margin-top: 0 !important;
-        text-align: left !important;
-    }
-
-    /* Sliders en horizontal */
-    #menu-showcase > div:last-child {
-        flex-direction: row !important;
-        gap: 1rem !important;
-        padding: 1rem 1.5rem !important;
-        overflow-x: auto;
-        justify-content: center;
-    }
-
-    /* Tarjetas de resultados — +15% */
-    .circle-static {
-        width: 239px !important;
-        height: auto !important;
-        flex-shrink: 0;
-    }
 
     /* Galeria */
     #pinterest-gallery { padding: 2rem 0; }
@@ -1097,33 +1228,6 @@
 
 /* ---- Tablets landscape (iPad, altura media 501px-900px) ---- */
 @media (max-width: 1023px) and (orientation: landscape) and (min-height: 501px) {
-
-    /* Showcase */
-    #menu-showcase {
-        min-height: auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .showcase-texto {
-        padding: 2rem 1.5rem !important;
-        margin-top: 0 !important;
-    }
-
-    /* Sliders en horizontal */
-    #menu-showcase > div:last-child {
-        flex-direction: row !important;
-        gap: 1.5rem !important;
-        padding: 1.5rem 2rem !important;
-        overflow-x: auto;
-        justify-content: center;
-    }
-
-    /* Tarjetas de resultados — +15% */
-    .circle-static {
-        width: 331px !important;
-        height: auto !important;
-        flex-shrink: 0;
-    }
 
     /* Galeria */
     .gallery-col { width: 220px; height: 420px; }
