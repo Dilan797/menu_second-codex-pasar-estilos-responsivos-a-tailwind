@@ -38,6 +38,19 @@
     z-index: 0;
 }
 
+/* Difumina la base del banner hacia el color de la sección siguiente (sin línea recta) */
+.hero-desktop::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 32%;
+    background: linear-gradient(to bottom, transparent 0%, var(--color-bg-body) 92%);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .hero-desktop__overlay {
     position: absolute;
     inset: 0;
