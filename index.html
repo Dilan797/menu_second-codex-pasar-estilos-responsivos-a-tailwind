@@ -55,15 +55,16 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
 
       <!--=============== TAILWIND (cargar ANTES para que CSS custom tenga prioridad) ===============-->
-      <link rel="stylesheet" href="assets/css/tailwind-output.css?v=52">
+      <link rel="stylesheet" href="assets/css/tailwind-output.css?v=59">
 
       <!--=============== PRELOAD recursos críticos ===============-->
+      <link rel="preload" href="assets/media/ultima_banner.webp?v=1" as="image" type="image/webp" media="(min-width: 1280px)" fetchpriority="high">
       <link rel="preload" href="assets/img/carolina-salas.webp" as="image" type="image/webp">
       <link rel="preload" href="assets/media/foto_inicial.webp" as="image" type="image/webp">
 
       <!--=============== CSS (después de Tailwind para ganar en cascada) ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css?v=52">
-      <link rel="stylesheet" href="assets/css/styles_1.css?v=52">
+      <link rel="stylesheet" href="assets/css/styles.css?v=59">
+      <link rel="stylesheet" href="assets/css/styles_1.css?v=59">
 
       <!--=============== SCHEMA.ORG — Negocio Local (JSON-LD) ===============-->
       <script type="application/ld+json">
@@ -347,7 +348,13 @@
                      <p class="hero-banner__tag">Más de 12 años de experiencia respaldando cada tratamiento.</p>
                      <a href="#servicios" class="hero-desktop__cta">Descubre nuestros métodos</a>
                   </div>
-                  <img class="hero-desktop__figure" src="assets/media/carolina-silueta.webp" alt="Carolina Salas — especialista en tratamientos corporales en Bogotá" loading="eager" decoding="async">
+                  <div class="hero-desktop__figure-wrap">
+                     <picture>
+                        <!-- Imagen nueva SOLO en pantallas grandes (>=1280px). Medianas/iPad usan la figura previa. -->
+                        <source media="(min-width: 1280px)" srcset="assets/media/ultima_banner.webp?v=1" width="679" height="1192">
+                        <img class="hero-desktop__figure" src="assets/media/carolina-silueta.webp" alt="Carolina Salas y su equipo profesional — especialistas en tratamientos corporales en Bogotá" width="428" height="802" loading="eager" decoding="async">
+                     </picture>
+                  </div>
                </div>
             </section>
 
@@ -369,10 +376,10 @@
                <div class="showcase-divider"></div>
                <p class="showcase-desc">Marcación abdominal, reducción de grasa localizada y tonificación corporal con tecnología de última generación. <strong>Resultados visibles desde las primeras sesiones.</strong></p>
                <ul class="showcase-services-list">
-                  <li>M-Sculp</li>
-                  <li>Tensamax</li>
-                  <li>Exilis Ultra 360</li>
-                  <li>Sculpt Face</li>
+                  <li><a href="#tratamiento-msculp">M-Sculp</a></li>
+                  <li><a href="#tratamiento-tensamax">Tensamax</a></li>
+                  <li><a href="#tratamiento-exilis">Exilis Ultra 360</a></li>
+                  <li><a href="#tratamiento-sculpt-face">Sculpt Face</a></li>
                </ul>
                <p class="showcase-hint">
                   Desliza para comparar antes y después
@@ -464,7 +471,7 @@
             <p>Tecnología corporal de última generación en Bogotá</p>
          </div>
          <div class="servicios-grid">
-            <article class="servicio-card" data-service="0">
+            <article class="servicio-card" id="tratamiento-msculp" data-service="0">
                <div class="servicio-card__img"><img src="assets/img/terapias/MSCULP.webp?v=2" alt="Tratamiento M-Sculp esculpido electromagnético HIFEM en Bogotá" loading="lazy" decoding="async"></div>
                <div class="servicio-card__body">
                   <h3>M-Sculp — Esculpido Electromagnético</h3>
@@ -472,7 +479,7 @@
                   <a href="https://wa.me/573116063492?text=Hola%2C%20quiero%20agendar%20una%20cita%20para%20M-Sculp" target="_blank" rel="noopener" class="servicio-card__wa-btn"><i class="ri-whatsapp-line"></i> Agendar cita</a>
                </div>
             </article>
-            <article class="servicio-card" data-service="1">
+            <article class="servicio-card" id="tratamiento-tensamax" data-service="1">
                <div class="servicio-card__img"><img src="assets/img/terapias/TENSAMAX.webp?v=2" alt="Tratamiento Tensamax reafirmación con radiofrecuencia en Bogotá" loading="lazy" decoding="async"></div>
                <div class="servicio-card__body">
                   <h3>Tensamax — Radiofrecuencia Reafirmante</h3>
@@ -480,7 +487,7 @@
                   <a href="https://wa.me/573116063492?text=Hola%2C%20quiero%20agendar%20una%20cita%20para%20Tensamax" target="_blank" rel="noopener" class="servicio-card__wa-btn"><i class="ri-whatsapp-line"></i> Agendar cita</a>
                </div>
             </article>
-            <article class="servicio-card" data-service="2">
+            <article class="servicio-card" id="tratamiento-exilis" data-service="2">
                <div class="servicio-card__img"><img src="assets/img/terapias/EXILIS.webp?v=2" alt="Exilis Ultra 360 rejuvenecimiento facial y corporal en Bogotá" loading="lazy" decoding="async"></div>
                <div class="servicio-card__body">
                   <h3>Exilis Ultra 360 — Rejuvenecimiento</h3>
@@ -488,7 +495,7 @@
                   <a href="https://wa.me/573116063492?text=Hola%2C%20quiero%20agendar%20una%20cita%20para%20Exilis%20Ultra%20360" target="_blank" rel="noopener" class="servicio-card__wa-btn"><i class="ri-whatsapp-line"></i> Agendar cita</a>
                </div>
             </article>
-            <article class="servicio-card" data-service="3">
+            <article class="servicio-card" id="tratamiento-sculpt-face" data-service="3">
                <div class="servicio-card__img"><img src="assets/img/terapias/SCULPT-FACE.webp?v=2" alt="Sculpt Face rejuvenecimiento y esculpido facial no invasivo en Bogotá" loading="lazy" decoding="async"></div>
                <div class="servicio-card__body">
                   <h3>Sculpt Face — Rejuvenecimiento Facial</h3>
