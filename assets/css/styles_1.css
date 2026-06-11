@@ -100,9 +100,12 @@
 }
 
 .hero-desktop__content .hero-banner__title {
-    font-size: clamp(2.6rem, 3.7vw, 3.7rem);
-    line-height: 0.95;
-    white-space: nowrap;
+    /* Fluido y continuo entre 1024 y 1920px, sin saltos */
+    font-size: clamp(2.4rem, 0.6rem + 2.9vw, 4rem);
+    line-height: 0.96;
+    /* Antes nowrap (riesgo de desborde): ahora reparte lineas de forma equilibrada */
+    white-space: normal;
+    text-wrap: balance;
 }
 
 /* Contenedor de la figura: variables afinadas por breakpoint (ver media queries) */
@@ -122,10 +125,6 @@
     /* Escala (anclada al pie) + subida; independiente de la animacion de la imagen */
     transform: translateY(calc(var(--fig-lift) * -1)) scale(var(--fig-scale));
     transform-origin: bottom center;
-}
-/* El <picture> no debe romper el layout flex: que el <img> sea el item real */
-.hero-desktop__figure-wrap picture {
-    display: contents;
 }
 /* Spotlight calido (dorado de marca) que hace flotar a las figuras */
 .hero-desktop__figure-wrap::before {
@@ -1070,6 +1069,8 @@
     font-size: clamp(2rem, 8.5vw, 3.2rem);
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55);
     margin: 0;
+    text-wrap: balance;          /* reparte el titulo en lineas parejas */
+    overflow-wrap: break-word;   /* evita desbordes en pantallas muy angostas */
     opacity: 0;
     animation: heroReveal 0.9s cubic-bezier(.2, .75, .2, 1) 0.15s forwards;
 }
@@ -1082,6 +1083,8 @@
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.65);
     max-width: 48ch;
     margin: 0;
+    text-wrap: pretty;           /* evita lineas viudas/huerfanas en el parrafo */
+    overflow-wrap: break-word;
     opacity: 0;
     animation: heroReveal 0.9s cubic-bezier(.2, .75, .2, 1) 0.3s forwards;
 }
@@ -1210,8 +1213,10 @@
 }
 .showcase-titulo__main {
     color: #fff;
-    font-size: clamp(2.3rem, 7vw, 3.4rem);
+    font-size: clamp(2rem, 7vw, 3.4rem);
     letter-spacing: -1px;
+    text-wrap: balance;
+    hyphens: none;          /* nunca partir "Transformacion" */
 }
 
 .showcase-divider {
@@ -1224,11 +1229,13 @@
 .showcase-desc {
     font-family: "Lato", sans-serif;
     font-weight: 300;
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
     line-height: 1.6;
     color: #A0B4C8;
     max-width: 580px;
     margin: 0 auto 1.4rem;
+    text-wrap: pretty;
+    overflow-wrap: break-word;
 }
 .showcase-desc strong {
     color: #cdd9e6;
@@ -1292,16 +1299,87 @@
     scroll-margin-top: 100px;
 }
 
+/* Pista "Desliza para comparar": pildora destacada con glow + brillo */
 .showcase-hint {
+    position: relative;
     display: inline-flex;
+    flex-wrap: nowrap;               /* todo en una sola fila */
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
+    max-width: 100%;                 /* nunca mas ancha que el contenedor */
+    box-sizing: border-box;
+    text-align: center;
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
+    font-weight: 700;
+    /* La fuente baja con el ancho (vw) para que la frase quepa en 1 linea en cualquier pantalla */
+    font-size: clamp(0.52rem, 2.7vw, 0.95rem);
+    letter-spacing: clamp(0.02em, 0.2vw, 0.14em);   /* menos tracking en movil */
+    line-height: 1.3;
     text-transform: uppercase;
-    color: #c9a84c;
+    color: #fdf6e6;
+    padding: clamp(0.5rem, 1.6vw, 0.72rem) clamp(0.8rem, 2.6vw, 1.5rem);
+    border-radius: 999px;
+    border: 1.5px solid rgba(201, 168, 76, 0.55);
+    background: linear-gradient(110deg, rgba(201, 168, 76, 0.16), rgba(201, 168, 76, 0.04));
+    overflow: hidden;
+    isolation: isolate;
+    animation: hintPulse 2.4s ease-in-out infinite;
+}
+/* Frase siempre en una sola linea */
+.showcase-hint__text {
+    white-space: nowrap;
+}
+/* Zoom-proof: la fuente escala segun el ancho REAL de la columna (no del viewport).
+   En escritorio la columna es estrecha; con zoom >100% se angosta mas, y cqi lo sigue
+   correctamente para que la frase quepa en 1 linea. Fallback en vw (arriba) si no hay soporte. */
+@supports (font-size: 1cqi) {
+    .showcase-texto {
+        container-type: inline-size;
+    }
+    .showcase-hint {
+        font-size: clamp(0.52rem, 3.2cqi, 0.95rem);
+    }
+    /* El titulo escala con la columna: "Transformacion" cabe en 1 linea a cualquier zoom */
+    .showcase-titulo__main {
+        font-size: clamp(1.6rem, 11cqi, 3.4rem);
+    }
+    /* El boton encoge para caber en la columna en vez de partirse/salirse */
+    .showcase-cta {
+        font-size: clamp(0.82rem, 5.5cqi, 0.9975rem);
+        padding: 0.78rem clamp(1rem, 5cqi, 1.6rem);
+    }
+}
+/* Destello que recorre la pildora */
+.showcase-hint::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.38) 50%,
+        transparent 65%);
+    transform: translateX(-130%);
+    animation: hintShimmer 3.2s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes hintPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.0);
+        border-color: rgba(201, 168, 76, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 24px 4px rgba(201, 168, 76, 0.35);
+        border-color: rgba(201, 168, 76, 0.95);
+    }
+}
+@keyframes hintShimmer {
+    0%      { transform: translateX(-130%); }
+    55%, 100% { transform: translateX(130%); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .showcase-hint { animation: none; }
+    .showcase-hint::after { animation: none; opacity: 0; }
 }
 
 /* --- Tarjetas antes/después --- */
@@ -1319,8 +1397,12 @@
 }
 .showcase-cta {
     margin-top: 0;
-    padding: 0.819rem 1.785rem; /* +5% sobre 0.78rem / 1.7rem */
-    font-size: 0.9975rem; /* +5% sobre 0.95rem */
+    max-width: 100%;            /* nunca mas ancho que la columna */
+    box-sizing: border-box;
+    white-space: normal;        /* si no cabe, parte el texto en vez de salirse */
+    padding: 0.78rem 1.6rem;
+    font-size: 0.9975rem;
+    line-height: 1.25;
 }
 
 /* Tablet y pantallas grandes: 3 tarjetas en fila */
@@ -1765,14 +1847,19 @@
 /* --- Flecha animada swipe --- */
 .swipe-arrow {
     display: inline-flex;
-    animation: bounceX 1.5s ease-in-out infinite;
+    color: #c9a84c;
+    animation: bounceX 1.3s ease-in-out infinite;
 }
 .swipe-arrow i {
-    font-size: 1rem;
+    font-size: 1.25rem;
+    filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.6));
 }
 @keyframes bounceX {
     0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(8px); }
+    50% { transform: translateX(10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .swipe-arrow { animation: none; }
 }
 
 /* --- Modal --- */
