@@ -66,11 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'assets/img/terapias/EXILIS.webp'
         },
         {
-            titulo: 'Cavitación',
-            desc: 'Lipocavitación ultrasónica de baja frecuencia que genera microburbujas dentro del tejido adiposo. Al implosionar, estas burbujas rompen selectivamente las membranas de las células grasas (adipocitos), liberando los triglicéridos que el cuerpo elimina de forma natural a través del sistema linfático y urinario. Alternativa segura y no invasiva a la liposucción, sin anestesia ni tiempo de recuperación. Eficaz en abdomen, flancos, muslos, espalda y brazos. Sesiones de 40 minutos con resultados medibles desde la primera aplicación.',
-            img: 'assets/img/terapias/CAVITACION.webp'
-        },
-        {
             titulo: 'Sculpt Face',
             desc: 'Tratamiento facial no invasivo que reafirma, redefine el óvalo del rostro y atenúa líneas de expresión. Estimula la producción de colágeno y tonifica la musculatura facial para un efecto lifting natural, sin agujas ni cirugía. Mejora la firmeza, la luminosidad y la textura de la piel, atenuando la flacidez y los signos de la edad. Sesiones cómodas, sin tiempo de recuperación y con resultados progresivos visibles desde las primeras aplicaciones.',
             img: 'assets/img/terapias/SCULPT-FACE.webp'

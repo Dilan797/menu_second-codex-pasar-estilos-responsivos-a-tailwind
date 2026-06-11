@@ -1153,7 +1153,8 @@
     align-items: center;
     gap: 0.4rem;
     font-family: "Montserrat", sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.756rem; /* +5% sobre 0.72rem */
+    font-weight: 700;
     letter-spacing: 0.03em;
     color: #cdd9e6;
     padding: 0.42rem 0.9rem;
@@ -1194,8 +1195,8 @@
 }
 .showcase-cta {
     margin-top: 0;
-    padding: 0.78rem 1.7rem;
-    font-size: 0.95rem;
+    padding: 0.819rem 1.785rem; /* +5% sobre 0.78rem / 1.7rem */
+    font-size: 0.9975rem; /* +5% sobre 0.95rem */
 }
 
 /* Tablet y pantallas grandes: 3 tarjetas en fila */
@@ -1521,6 +1522,14 @@
     margin: 0 auto;
 }
 
+/* Pantallas grandes: las 4 tarjetas en una sola fila balanceada (evita la huerfana 3+1) */
+@media (min-width: 1024px) {
+    .servicios-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1280px;
+    }
+}
+
 /* --- Tarjeta --- */
 .servicio-card {
     background: var(--color-bg-card);
@@ -1555,7 +1564,7 @@
 
 .servicio-card__img {
     display: flex;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4 / 4; /* -20% de altura vs 4/5 original */
     overflow: hidden;
     background: var(--color-bg-surface);
 }
@@ -1566,13 +1575,13 @@
     object-fit: contain;
     object-position: center;
     display: block;
-    transform: scale(0.85);
+    transform: translateY(5%) scale(0.8925); /* +5% tamaño, bajada 5% */
     filter: contrast(1.02) saturate(1.04);
     transition: transform 0.5s cubic-bezier(.25,.46,.45,.94),
                 filter 0.5s ease;
 }
 .servicio-card:hover .servicio-card__img img {
-    transform: scale(0.88);
+    transform: translateY(5%) scale(0.924); /* +5% tamaño, bajada 5% */
     filter: contrast(1.05) saturate(1.08);
 }
 
