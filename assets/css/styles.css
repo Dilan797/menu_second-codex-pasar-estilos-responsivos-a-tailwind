@@ -84,6 +84,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  font-size: 105%; /* +5% a toda la tipografia (rem) de la pagina */
 }
 
 body {
