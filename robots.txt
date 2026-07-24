@@ -20,4 +20,4 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: https://bycarolinasalas.dilanblues.workers.dev/sitemap.xml
+Sitemap: https://bycarolinasalas.com/sitemap.xml
