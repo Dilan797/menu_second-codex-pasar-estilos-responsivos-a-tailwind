@@ -977,7 +977,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: url('../img/carolina-salas-especialista-tratamientos-corporales-bogota.webp') center/cover no-repeat;
+    background: url('../img/carolina-salas-especialista-tratamientos-corporales-bogota.webp?v=2') center/cover no-repeat;
     filter: blur(22px) brightness(0.55) saturate(1.1);
     transform: scale(1.15);
 }
