@@ -977,7 +977,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: url('../media/banner_movil.webp') center/cover no-repeat;
+    background: url('../img/carolina-salas-especialista-tratamientos-corporales-bogota.webp') center/cover no-repeat;
     filter: blur(22px) brightness(0.55) saturate(1.1);
     transform: scale(1.15);
 }
@@ -3407,4 +3407,82 @@
 /* Preservar los iconos (Remixicon) y campos de formulario nativos */
 [class^="ri-"], [class*=" ri-"], i {
     font-family: "remixicon" !important;
+}
+
+/*=============== SOBRE MÍ ===============*/
+#sobre-mi {
+    background: var(--color-bg-body);
+    padding: 4rem 1.5rem;
+}
+.sobremi-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.sobremi-photo {
+    width: min(320px, 80vw);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    background: #FFFFFF;
+}
+.sobremi-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.sobremi-content {
+    text-align: center;
+    max-width: 560px;
+}
+.sobremi-content h2 {
+    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 0.92;
+    margin-bottom: 1rem;
+}
+.sobremi-content h2 .st-line {
+    display: block;
+    text-transform: uppercase;
+    line-height: 0.92;
+}
+.sobremi-content h2 .st-line--accent { color: #7BB8D4; font-size: clamp(1.2rem, 2.5vw, 2rem); }
+.sobremi-content h2 .st-line--white  { color: #FFFFFF; font-size: clamp(2.2rem, 4.5vw, 4rem); letter-spacing: -1px; }
+.sobremi-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--color-accent-gold);
+    margin: 0.75rem auto 0;
+}
+.sobremi-lead {
+    font-family: "Lato", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #A0B4C8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.sobremi-content p:not(.sobremi-lead) {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.sobremi-cta { margin-top: 0.5rem; }
+
+@media screen and (min-width: 768px) {
+    .sobremi-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 3.5rem;
+    }
+    .sobremi-photo { flex-shrink: 0; }
+    .sobremi-content { text-align: left; }
+    .sobremi-content h2::after { margin-left: 0; }
 }

@@ -53,22 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             titulo: 'M-Sculp',
             desc: 'Tecnología HIFEM (High-Intensity Focused Electromagnetic) que genera más de 20.000 contracciones supramáximales por sesión, activando el 100% de las fibras musculares — algo imposible mediante el ejercicio voluntario. Esculpe, tonifica y fortalece glúteos, abdomen, muslos, brazos y pantorrillas. Estudios clínicos demuestran un aumento del 25% en masa muscular y una reducción del 30% en grasa tras un ciclo de 4 sesiones de 30 minutos. Sin dolor, sin anestesia y sin tiempo de recuperación. Protocolo aprobado por la FDA con una tasa de satisfacción del 96%.',
-            img: 'assets/img/terapias/MSCULP.webp'
+            img: 'assets/img/terapias/msculp-esculpido-electromagnetico-bogota.webp'
         },
         {
             titulo: 'Tensamax',
             desc: 'Sistema de radiofrecuencia monopolar capacitiva y resistiva que genera un efecto térmico profundo en los tejidos. Eleva la temperatura interna estimulando la producción natural de colágeno y elastina, los dos pilares de la firmeza cutánea. Reafirma la piel, reduce celulitis, grasa visceral y fibrosis, redefine contornos corporales y mejora la textura de estrías y cicatrices recientes. Aplicable en rostro, cuello, abdomen, brazos y piernas. Resultados visibles a partir de la 4ta sesión, sin molestias ni tiempo de recuperación.',
-            img: 'assets/img/terapias/TENSAMAX.webp'
+            img: 'assets/img/terapias/tensamax-radiofrecuencia-reafirmante-bogota.webp'
         },
         {
             titulo: 'Exilis Ultra 360',
             desc: 'Equipo de última generación de BTL que combina por primera vez radiofrecuencia monopolar con ultrasonido focalizado en un solo dispositivo. Esta doble acción permite reducir depósitos de grasa localizada, estimular la producción de colágeno, combatir la flacidez y suavizar líneas de expresión. Aprobado por la FDA, actúa en rostro, cuello, papada, abdomen, flancos, muslos y áreas íntimas. Tratamiento completamente no invasivo con resultados visibles desde la primera sesión que mejoran progresivamente durante las semanas siguientes.',
-            img: 'assets/img/terapias/EXILIS.webp'
+            img: 'assets/img/terapias/exilis-ultra-360-rejuvenecimiento-bogota.webp'
         },
         {
             titulo: 'Sculpt Face',
             desc: 'Tratamiento facial no invasivo que reafirma, redefine el óvalo del rostro y atenúa líneas de expresión. Estimula la producción de colágeno y tonifica la musculatura facial para un efecto lifting natural, sin agujas ni cirugía. Mejora la firmeza, la luminosidad y la textura de la piel, atenuando la flacidez y los signos de la edad. Sesiones cómodas, sin tiempo de recuperación y con resultados progresivos visibles desde las primeras aplicaciones.',
-            img: 'assets/img/terapias/SCULPT-FACE.webp'
+            img: 'assets/img/terapias/sculpt-face-lifting-facial-sin-cirugia-bogota.webp'
         }
     ];
 
