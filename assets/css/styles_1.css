@@ -3028,6 +3028,62 @@
     }
 }
 
+/* Foto real de Carolina — imagen dominante de la sección de contacto */
+.contact-photo {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    align-items: center;
+    margin: 0;
+}
+.contact-photo__img {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    margin-inline: auto;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.contact-photo__caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+    color: var(--color-text-secondary, #cbd5e1);
+}
+.contact-photo__caption strong {
+    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    color: #fff;
+}
+.contact-photo__caption span {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+@media (min-width: 768px) {
+    .contact-photo {
+        grid-template-columns: 380px 1fr;
+        gap: 2.5rem;
+    }
+    .contact-photo__img {
+        max-width: 380px;
+        margin-inline: 0;
+    }
+    .contact-photo__caption {
+        text-align: left;
+    }
+    .contact-photo__caption strong {
+        font-size: 2rem;
+    }
+    .contact-photo__caption span {
+        font-size: 1rem;
+    }
+}
+
 /* Mapa */
 .contact-map {
     position: relative;
