@@ -64,28 +64,29 @@
 
       <!--=============== CSS (después de Tailwind para ganar en cascada) ===============-->
       <link rel="stylesheet" href="assets/css/styles.css?v=70">
-      <link rel="stylesheet" href="assets/css/styles_1.css?v=74">
+      <link rel="stylesheet" href="assets/css/styles_1.css?v=75">
 
       <!--=============== SCHEMA.ORG — Negocio Local (JSON-LD) ===============-->
       <script type="application/ld+json">
       {
          "@context": "https://schema.org",
          "@type": "HealthAndBeautyBusiness",
+         "@id": "https://bycarolinasalas.com/#negocio",
          "name": "By Carolina Salas",
          "alternateName": "Carolina Salas — Hipopresivos y Tratamientos Corporales",
          "description": "Centro especializado en hipopresivos, M-Sculp, Tensamax, Exilis Ultra 360 en Bogotá. Recuperación postparto, suelo pélvico y tonificación corporal.",
          "url": "https://bycarolinasalas.com/",
          "logo": "https://bycarolinasalas.com/assets/img/logo.png",
          "image": [
+            "https://bycarolinasalas.com/assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.jpg?v=2",
             "https://bycarolinasalas.com/assets/img/carolina-salas-sculp-face-especialista-bogota.jpg",
-            "https://bycarolinasalas.com/assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.jpg",
             "https://bycarolinasalas.com/assets/img/carolina-salas-y-equipo-centro-bienestar-bogota.webp"
          ],
          "founder": {
             "@type": "Person",
             "name": "Carolina Salas",
             "jobTitle": "Psicóloga, especialista en obesidad y trastornos de la conducta alimentaria",
-            "image": "https://bycarolinasalas.com/assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.jpg"
+            "image": "https://bycarolinasalas.com/assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.jpg?v=2"
          },
          "telephone": "+573116063492",
          "email": "macarosalas.falla@gmail.com",
@@ -137,6 +138,28 @@
             "reviewCount": "5",
             "bestRating": "5"
          }
+      }
+      </script>
+
+      <!--=============== SCHEMA.ORG — Pagina + imagen principal (la miniatura que Google muestra en resultados) ===============-->
+      <script type="application/ld+json">
+      {
+         "@context": "https://schema.org",
+         "@type": "WebPage",
+         "@id": "https://bycarolinasalas.com/#webpage",
+         "url": "https://bycarolinasalas.com/",
+         "name": "Carolina Salas — Hipopresivos, M-Sculp y Tratamientos Corporales en Bogotá",
+         "inLanguage": "es-CO",
+         "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "@id": "https://bycarolinasalas.com/#primaryimage",
+            "url": "https://bycarolinasalas.com/assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.jpg?v=2",
+            "contentUrl": "https://bycarolinasalas.com/assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.jpg?v=2",
+            "width": 1200,
+            "height": 1499,
+            "caption": "Carolina Salas, especialista en hipopresivos y tratamientos corporales en Bogotá"
+         },
+         "about": {"@id": "https://bycarolinasalas.com/#negocio"}
       }
       </script>
 
@@ -297,7 +320,7 @@
                      "
                      >
                <a href="#" class="nav__logo">
-                  <img src="assets/img/logo.webp" alt="By Carolina Salas — Hipopresivos y tratamientos corporales en Bogotá" class="nav__logo-img" width="512" height="512">
+                  <img src="assets/img/logo.webp" alt="By Carolina Salas — Hipopresivos y tratamientos corporales en Bogotá" class="nav__logo-img" width="48" height="48">
                   <span class="nav__logo-text">BY CAROLINA SALAS</span>
                </a>
 
@@ -576,9 +599,9 @@
                   </div>
                </div>
 
-               <!-- Instagram — Perfil -->
+               <!-- Instagram Post 5 -->
                <div class="video-card">
-                  <div class="video-card__embed lazy-embed" data-lazy-type="instagram" data-lazy-url="https://www.instagram.com/bycarolinasalas54/">
+                  <div class="video-card__embed lazy-embed" data-lazy-type="instagram" data-lazy-url="https://www.instagram.com/p/DXrWyOgjRKW/">
                      <div class="lazy-embed__placeholder">
                         <i class="ri-instagram-line"></i>
                         <span>Toca para cargar</span>
@@ -586,9 +609,9 @@
                   </div>
                </div>
 
-               <!-- Instagram Post 5 -->
+               <!-- Reel 6 — reemplaza el embed de perfil (Instagram ya no permite incrustar perfiles) -->
                <div class="video-card">
-                  <div class="video-card__embed lazy-embed" data-lazy-type="instagram" data-lazy-url="https://www.instagram.com/p/DXrWyOgjRKW/">
+                  <div class="video-card__embed lazy-embed" data-lazy-type="instagram" data-lazy-url="https://www.instagram.com/p/DTQcgCSDq_z/">
                      <div class="lazy-embed__placeholder">
                         <i class="ri-instagram-line"></i>
                         <span>Toca para cargar</span>
@@ -695,25 +718,6 @@
                   <div class="gallery-card gallery-card--medium"><img src="assets/img/terapias/resultado-abdomen-plano-antes-despues.webp" alt="Abdomen plano tras tratamiento corporal no invasivo en Bogotá — antes y después" loading="lazy" decoding="async"></div>
                </div>
 
-            </div>
-         </div>
-      </section>
-
-      <!-- ==================== SOBRE MÍ ==================== -->
-      <section id="sobre-mi">
-         <div class="sobremi-container">
-            <div class="sobremi-photo">
-               <picture>
-                  <source srcset="assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.webp?v=2" type="image/webp">
-                  <img src="assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.jpg?v=2" alt="Carolina Salas, fundadora del centro de bienestar y tratamientos corporales By Carolina Salas en Bogotá" width="1200" height="1499" loading="lazy" decoding="async">
-               </picture>
-            </div>
-            <div class="sobremi-content">
-               <h2><span class="st-line st-line--accent">Conóceme</span><span class="st-line st-line--white">Carolina Salas</span></h2>
-               <p class="sobremi-lead">Salud, bienestar y belleza con respaldo profesional.</p>
-               <p>Soy psicóloga de la Universidad de La Sabana, especialista en obesidad y trastornos de la conducta alimentaria de la Universidad Autónoma de Barcelona, con más de 12 años de experiencia en técnicas manuales no invasivas.</p>
-               <p>En mi centro de Usaquén, en Bogotá, acompaño a cada paciente con un plan a su medida: hipopresivos, esculpido corporal y tecnología de última generación para lograr resultados reales y sostenibles.</p>
-               <a href="https://wa.me/573116063492?text=Hola%20Carolina%2C%20quiero%20agendar%20una%20valoraci%C3%B3n" target="_blank" rel="noopener" class="servicio-card__wa-btn sobremi-cta"><i class="ri-whatsapp-line"></i> Agenda tu valoración</a>
             </div>
          </div>
       </section>
@@ -880,6 +884,25 @@
          </div>
       </section>
 
+      <!-- ==================== SOBRE MÍ (justo antes de Contacto: foto real de Carolina que precede al logo del pin) ==================== -->
+      <section id="sobre-mi">
+         <div class="sobremi-container">
+            <div class="sobremi-photo">
+               <picture>
+                  <source srcset="assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.webp?v=2" type="image/webp">
+                  <img src="assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.jpg?v=2" alt="Carolina Salas, fundadora del centro de bienestar y tratamientos corporales By Carolina Salas en Bogotá" width="1200" height="1499" loading="lazy" decoding="async">
+               </picture>
+            </div>
+            <div class="sobremi-content">
+               <h2><span class="st-line st-line--accent">Conóceme</span><span class="st-line st-line--white">Carolina Salas</span></h2>
+               <p class="sobremi-lead">Salud, bienestar y belleza con respaldo profesional.</p>
+               <p>Soy psicóloga de la Universidad de La Sabana, especialista en obesidad y trastornos de la conducta alimentaria de la Universidad Autónoma de Barcelona, con más de 12 años de experiencia en técnicas manuales no invasivas.</p>
+               <p>En mi centro de Usaquén, en Bogotá, acompaño a cada paciente con un plan a su medida: hipopresivos, esculpido corporal y tecnología de última generación para lograr resultados reales y sostenibles.</p>
+               <a href="https://wa.me/573116063492?text=Hola%20Carolina%2C%20quiero%20agendar%20una%20valoraci%C3%B3n" target="_blank" rel="noopener" class="servicio-card__wa-btn sobremi-cta"><i class="ri-whatsapp-line"></i> Agenda tu valoración</a>
+            </div>
+         </div>
+      </section>
+
       <!-- ==================== CONTACTO ==================== -->
       <section id="contact">
          <div class="contact-header">
@@ -888,18 +911,6 @@
          </div>
 
          <div class="contact-wrapper">
-            <!-- Foto real de Carolina — imagen dominante de la sección de contacto (va antes del logo del pin del mapa) -->
-            <figure class="contact-photo">
-               <picture>
-                  <source srcset="assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.webp?v=2" type="image/webp">
-                  <img src="assets/img/carolina-salas-especialista-tratamientos-corporales-bogota.jpg?v=2" alt="Carolina Salas, especialista en hipopresivos y tratamientos corporales, en su centro de Usaquén, Bogotá" class="contact-photo__img" width="1200" height="1499" loading="lazy" decoding="async">
-               </picture>
-               <figcaption class="contact-photo__caption">
-                  <strong>Carolina Salas</strong>
-                  <span>Te esperamos en Cra 15 # 119-11, Edificio Epcocentro, Consultorio 427 — Usaquén, Bogotá</span>
-               </figcaption>
-            </figure>
-
             <!-- Mapa -->
             <div class="contact-map lazy-map" data-lazy-map="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977!2d-74.0300!3d4.6960!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCra+15+%23119-11+Edificio+Epcocentro+Consultorio+427%2C+Usaqu%C3%A9n%2C+Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1700000000000" data-lazy-fallback="https://www.google.com/maps?q=Cra+15+119-11+Usaqu%C3%A9n+Bogot%C3%A1+Colombia&z=17&output=embed">
                <div class="lazy-map__placeholder">
@@ -908,7 +919,7 @@
                </div>
                <div class="contact-map__pin">
                   <div class="contact-map__pin-logo">
-                     <img src="assets/img/logo.webp" alt="By Carolina Salas" width="512" height="512">
+                     <img src="assets/img/logo.webp" alt="By Carolina Salas" width="48" height="48">
                      <svg class="contact-map__pin-arrow" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 14L0 0h24L12 14z" fill="#000"/>
                      </svg>
@@ -980,7 +991,7 @@
       <footer class="site-footer">
          <div class="site-footer__inner">
             <div class="site-footer__logo">
-               <img src="assets/img/logo.webp" alt="By Carolina Salas — Tratamientos corporales en Bogotá" width="512" height="512">
+               <img src="assets/img/logo.webp" alt="By Carolina Salas — Tratamientos corporales en Bogotá" width="48" height="48">
                <span>BY CAROLINA SALAS</span>
             </div>
             <p class="site-footer__copy">&copy; 2026 Carolina Salas — Todos los derechos reservados</p>

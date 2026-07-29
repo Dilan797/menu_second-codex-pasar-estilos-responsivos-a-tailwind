@@ -87,6 +87,15 @@
     padding: 0 3rem 0 5.5rem;
 }
 
+/* Pantallas anchas: la caja interna estaba topada en 1240px, asi que el texto
+   nunca ganaba ancho por mas que creciera el monitor (se quedaba en ~647px)
+   mientras la figura si crecia por breakpoint. Ahora la caja acompana. */
+@media (min-width: 1440px) {
+    .hero-desktop__inner {
+        max-width: min(1720px, 92vw);
+    }
+}
+
 .hero-desktop__content {
     display: flex;
     flex-direction: column;
@@ -110,20 +119,30 @@
 
 /* Contenedor de la figura: variables afinadas por breakpoint (ver media queries) */
 .hero-desktop__figure-wrap {
-    --fig-maxw: 42%;   /* ancho maximo (la figura es vertical, esto gobierna su tamano) */
-    --fig-scale: 1.24; /* +15% sobre el tamano grande anterior (1.08 -> 1.24) */
+    --fig-maxw: 42%;   /* ancho base (la figura es vertical, esto gobierna su tamano) */
+    --fig-h: 92%;      /* alto base respecto al hero */
+    --fig-scale: 1.24; /* factor de agrandado */
     --fig-lift: 7%;    /* sube la figura respecto al pie */
     align-self: flex-end;
-    height: 92%;       /* tamano grande como la version anterior */
-    max-width: var(--fig-maxw);
+    /* El factor de agrandado se aplica al TAMANO, no con transform: scale().
+       Un transform no ocupa espacio de layout: flexbox reservaba la caja sin
+       escalar y la figura se pintaba un 24% mas grande, derramando ~12% por
+       lado encima del texto (visible en pantallas anchas y con zoom <=75%).
+       Con height/max-width el espacio reservado coincide con lo pintado. */
+    height: calc(var(--fig-h) * var(--fig-scale));
+    /* Tope absoluto. La altura es un % de 100dvh, asi que al bajar el zoom el
+       viewport crece en px CSS y la figura conservaba su tamano FISICO mientras
+       el texto (rem/clamp) se encogia: se veia desproporcionada. Con este tope
+       deja de crecer con el viewport y la composicion se mantiene estable. */
+    max-height: var(--fig-hmax, 1240px);
+    max-width: calc(var(--fig-maxw) * var(--fig-scale));
     flex: 0 0 auto;
     position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     pointer-events: none;
-    /* Escala (anclada al pie) + subida; independiente de la animacion de la imagen */
-    transform: translateY(calc(var(--fig-lift) * -1)) scale(var(--fig-scale));
+    transform: translateY(calc(var(--fig-lift) * -1));
     transform-origin: bottom center;
 }
 /* Spotlight calido (dorado de marca) que hace flotar a las figuras */
@@ -175,7 +194,7 @@
         --fig-maxw: 38%;
         --fig-scale: 1.15;
         --fig-lift: 5%;
-        height: 88%;
+        --fig-h: 88%;
     }
 }
 
@@ -185,7 +204,7 @@
         --fig-maxw: 46%;
         --fig-scale: 1.24;
         --fig-lift: 7%;
-        height: 92%;
+        --fig-h: 92%;
     }
 }
 
@@ -195,7 +214,7 @@
         --fig-maxw: 640px;
         --fig-scale: 1.24;
         --fig-lift: 7%;
-        height: 92%;
+        --fig-h: 92%;
     }
 }
 
@@ -205,7 +224,7 @@
     .hero-desktop__figure-wrap {
         --fig-scale: 1.17;
         --fig-lift: 4%;
-        height: 84%;
+        --fig-h: 84%;
     }
 }
 
@@ -1820,7 +1839,8 @@
 
 .servicio-card__img {
     display: flex;
-    aspect-ratio: 4 / 4; /* -20% de altura vs 4/5 original */
+    aspect-ratio: 4 / 5; /* igual a la proporcion de las fotos (1200x1500): se ven completas, sin recorte */
+    padding: 5%;         /* 5% por lado = foto 10% mas pequena, con aire respecto a la tarjeta */
     overflow: hidden;
     background: var(--color-bg-surface);
 }
@@ -1828,16 +1848,15 @@
     flex: 1;
     min-height: 0;
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+    object-fit: contain; /* con height 100% + contain la foto entra entera, nunca se recorta */
     object-position: center;
     display: block;
-    transform: translateY(5%) scale(0.8925); /* +5% tamaño, bajada 5% */
+    /* Sin escalado: la caja ya tiene la proporcion de la foto, asi que se ve entera */
     filter: contrast(1.02) saturate(1.04);
-    transition: transform 0.5s cubic-bezier(.25,.46,.45,.94),
-                filter 0.5s ease;
+    transition: filter 0.5s ease;
 }
 .servicio-card:hover .servicio-card__img img {
-    transform: translateY(5%) scale(0.924); /* +5% tamaño, bajada 5% */
     filter: contrast(1.05) saturate(1.08);
 }
 
@@ -3025,62 +3044,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
         align-items: start;
-    }
-}
-
-/* Foto real de Carolina — imagen dominante de la sección de contacto */
-.contact-photo {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    align-items: center;
-    margin: 0;
-}
-.contact-photo__img {
-    display: block;
-    width: 100%;
-    max-width: 340px;
-    height: auto;
-    margin-inline: auto;
-    border-radius: 16px;
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-}
-.contact-photo__caption {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    text-align: center;
-    color: var(--color-text-secondary, #cbd5e1);
-}
-.contact-photo__caption strong {
-    font-family: "Posterama 2001 W04 Regular", "Bebas Neue", sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 0.06em;
-    color: #fff;
-}
-.contact-photo__caption span {
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-@media (min-width: 768px) {
-    .contact-photo {
-        grid-template-columns: 380px 1fr;
-        gap: 2.5rem;
-    }
-    .contact-photo__img {
-        max-width: 380px;
-        margin-inline: 0;
-    }
-    .contact-photo__caption {
-        text-align: left;
-    }
-    .contact-photo__caption strong {
-        font-size: 2rem;
-    }
-    .contact-photo__caption span {
-        font-size: 1rem;
     }
 }
 
