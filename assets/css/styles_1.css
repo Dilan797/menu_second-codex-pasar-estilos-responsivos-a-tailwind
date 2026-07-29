@@ -130,11 +130,14 @@
        lado encima del texto (visible en pantallas anchas y con zoom <=75%).
        Con height/max-width el espacio reservado coincide con lo pintado. */
     height: calc(var(--fig-h) * var(--fig-scale));
-    /* Tope absoluto. La altura es un % de 100dvh, asi que al bajar el zoom el
-       viewport crece en px CSS y la figura conservaba su tamano FISICO mientras
-       el texto (rem/clamp) se encogia: se veia desproporcionada. Con este tope
-       deja de crecer con el viewport y la composicion se mantiene estable. */
-    max-height: var(--fig-hmax, 1240px);
+    /* Tope EN REM, no en px. La altura es un % de 100dvh y 100dvh siempre vale
+       lo mismo en pixeles fisicos, sin importar el zoom: la figura conservaba
+       su tamano fisico mientras el texto (rem) se encogia al alejar el zoom.
+       Un tope en px tampoco sirve, porque un px CSS tampoco cambia con el zoom.
+       En rem si: es la misma unidad del texto, asi la foto se encoge en la
+       misma proporcion que las letras y la composicion no se descuadra.
+       Subir este valor = foto mas grande. */
+    max-height: var(--fig-hmax, 40rem);
     max-width: calc(var(--fig-maxw) * var(--fig-scale));
     flex: 0 0 auto;
     position: relative;
