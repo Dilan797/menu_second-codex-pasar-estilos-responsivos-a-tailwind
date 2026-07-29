@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /assets/js/
-Disallow: /assets/css/
+# No se bloquean /assets/css/ ni /assets/js/: Bing y Google necesitan
+# descargarlos para renderizar la pagina y evaluar la experiencia movil.
+# Bloquearlos hacia que vieran el sitio sin estilos.
 
 # AI Crawlers
 User-agent: GPTBot
